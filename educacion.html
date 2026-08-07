@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapictrl Educación | La plataforma completa para tu institución</title>
+  <meta name="description" content="Matrícula, aula virtual, notas por periodos, portal del estudiante, certificados y cartera en una sola plataforma. Entra al demo sin registrarte y recorre un instituto completo." />
+  <meta name="keywords" content="software para colegios, plataforma educativa, software institutos técnicos, gestión académica, notas por periodos, aula virtual, certificados estudiantes, Rapictrl" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rapictrl Educación | La plataforma completa para tu institución" />
+  <meta property="og:description" content="Estudiantes, clases, notas, certificados y cartera en un solo lugar. Entra al demo sin registrarte." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rapictrl.com/educacion" />
+  <meta property="og:image" content="https://rapictrl.com/PORTADA.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://rapictrl.com/PORTADA.png" />
+
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Sistema de diseño compartido con la landing general + capa de educación -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="educacion.css" />
+</head>
+<body class="edu">
+
+  <!-- ═══════════════════════════════════════════════════════ HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="logo">
+        <img src="logo.png" alt="Rapictrl" class="logo-mark" />Rapictrl
+        <span class="logo-suffix">Educación</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="#modulos">Módulos</a>
+        <a href="#aula">Aula virtual</a>
+        <a href="#portal">Portal</a>
+        <a href="#pricing">Precios</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://app.rapictrl.com/login" class="btn-ghost">Iniciar Sesión</a>
+        <a href="index.html" class="btn-outline">Rapictrl general</a>
+        <a href="https://app.rapictrl.com/demo" class="btn-primary btn-edu">Ver el demo</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <nav>
+        <a href="#modulos" class="mobile-link">Módulos</a>
+        <a href="#aula" class="mobile-link">Aula virtual</a>
+        <a href="#portal" class="mobile-link">Portal del estudiante</a>
+        <a href="#pricing" class="mobile-link">Precios</a>
+        <a href="#faq" class="mobile-link">FAQ</a>
+        <hr class="mobile-divider" />
+        <a href="https://app.rapictrl.com/login" class="mobile-link">Iniciar Sesión</a>
+        <a href="index.html" class="btn-outline w-full text-center block">Ver Rapictrl general</a>
+        <a href="https://app.rapictrl.com/demo" class="btn-primary btn-edu w-full text-center block mt-2">Ver el demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════ HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-glow edu-glow"></div>
+      <div class="hero-glow-blue"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy animate-on-scroll">
+          <div class="badge badge-edu">🎓 Entra al demo sin registrarte — instituto completo, ya montado</div>
+          <h1>
+            Tu institución entera,
+            <span class="text-gradient-edu">en una sola plataforma</span>
+          </h1>
+          <p class="hero-sub">
+            Matrícula, aula virtual, notas por periodos, portal del estudiante, certificados y cartera.
+            Deja el Excel, los cuadernos y los grupos de WhatsApp.
+          </p>
+          <div class="hero-actions">
+            <a href="https://app.rapictrl.com/demo" class="btn-white">
+              Ver el demo educativo <span class="arrow">→</span>
+            </a>
+            <a href="#modulos" class="btn-glass">Ver los módulos</a>
+          </div>
+          <div class="hero-register">
+            <span class="hero-register-label">sin formularios · sin tarjeta · entras en 5 segundos</span>
+          </div>
+          <div class="trust-badges">
+            <span>✓ 3 programas de ejemplo cargados</span>
+            <span>✓ 18 estudiantes con notas</span>
+            <span>✓ Crea y borra lo que quieras</span>
+          </div>
+        </div>
+
+        <!-- Mockup — Dashboard académico -->
+        <div class="hero-mockup-wrapper animate-on-scroll delay-2">
+        <div class="hero-mockup-inner">
+          <div class="mockup-browser">
+            <div class="mockup-chrome">
+              <div class="chrome-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <div class="chrome-url">app.rapictrl.com/inicio</div>
+              <div class="live-badge">En vivo ●</div>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-sidebar">
+                <div class="sidebar-brand">R</div>
+                <div class="sidebar-icon active">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                </div>
+                <div class="sidebar-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <div class="sidebar-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                </div>
+                <div class="sidebar-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <div class="sidebar-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </div>
+              </div>
+              <div class="mockup-main">
+                <div class="dash-topbar">
+                  <span class="dash-title">Instituto Demo · Periodo actual</span>
+                </div>
+                <div class="stat-grid">
+                  <div class="stat-card stat-blue">
+                    <div class="stat-label">Estudiantes activos</div>
+                    <div class="stat-value">248</div>
+                    <div class="stat-sub">↑ 18 este mes</div>
+                  </div>
+                  <div class="stat-card stat-green">
+                    <div class="stat-label">Recaudo del mes</div>
+                    <div class="stat-value">$18.400.000</div>
+                    <div class="stat-sub">86% de la cartera</div>
+                  </div>
+                  <div class="stat-card stat-yellow">
+                    <div class="stat-label">Notas pendientes</div>
+                    <div class="stat-value">2 materias</div>
+                    <div class="stat-sub">Cierra el 2.º corte</div>
+                  </div>
+                  <div class="stat-card stat-red">
+                    <div class="stat-label">En mora</div>
+                    <div class="stat-value">11 estudiantes</div>
+                    <div class="stat-sub">Requieren gestión</div>
+                  </div>
+                </div>
+                <div class="chart-box">
+                  <div class="chart-title">Avance de clases por programa</div>
+                  <div class="chart-bars">
+                    <div class="bar-group"><div class="bar bar-edu" style="height:72%"></div><div class="bar bar-edu-2" style="height:38%"></div></div>
+                    <div class="bar-group"><div class="bar bar-edu" style="height:88%"></div><div class="bar bar-edu-2" style="height:52%"></div></div>
+                    <div class="bar-group"><div class="bar bar-edu" style="height:64%"></div><div class="bar bar-edu-2" style="height:30%"></div></div>
+                    <div class="bar-group"><div class="bar bar-edu" style="height:95%"></div><div class="bar bar-edu-2" style="height:61%"></div></div>
+                    <div class="bar-group"><div class="bar bar-edu" style="height:80%"></div><div class="bar bar-edu-2" style="height:44%"></div></div>
+                    <div class="bar-group"><div class="bar bar-edu" style="height:58%"></div><div class="bar bar-edu-2" style="height:26%"></div></div>
+                    <div class="bar-group"><div class="bar bar-edu" style="height:90%"></div><div class="bar bar-edu-2" style="height:57%"></div></div>
+                  </div>
+                  <div class="chart-days">
+                    <span>Adm</span><span>P.I.</span><span>Val</span><span>SST</span><span>G.H.</span><span>Sis</span><span>Ing</span>
+                  </div>
+                </div>
+                <div class="txn-list">
+                  <div class="txn-title">Últimos movimientos</div>
+                  <div class="txn-row"><span class="txn-desc">Matrícula · Valentina Osorio</span><span class="txn-amount income">+$150.000</span></div>
+                  <div class="txn-row"><span class="txn-desc">Notas cargadas · Matemáticas</span><span class="txn-amount neutral">1.er corte</span></div>
+                  <div class="txn-row"><span class="txn-desc">Mensualidad · Wilson Trujillo</span><span class="txn-amount income">+$120.000</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ PAIN POINTS -->
+    <section class="section bg-white" id="pain">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-eyebrow">¿Te suena familiar?</div>
+          <h2>Administrar una institución con Excel y WhatsApp tiene un costo</h2>
+          <p class="section-sub">No es solo tiempo perdido: son matrículas que no se cierran, cartera que no se cobra y estudiantes que se retiran sin que nadie lo note a tiempo.</p>
+        </div>
+
+        <div class="pain-grid">
+          <div class="pain-card animate-on-scroll delay-1">
+            <div class="pain-icon pain-purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3>Las notas viven en diez archivos</h3>
+            <p>Cada docente lleva su Excel. Cuando toca sacar el boletín, alguien pasa dos días consolidando y siempre aparece una nota que no cuadra.</p>
+          </div>
+          <div class="pain-card animate-on-scroll delay-2">
+            <div class="pain-icon pain-orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <h3>Todo pasa por WhatsApp</h3>
+            <p>Material de clase, avisos, tareas y hasta los pagos. Lo que se manda hoy se pierde mañana, y el estudiante que entra tarde nunca alcanza el hilo.</p>
+          </div>
+          <div class="pain-card animate-on-scroll delay-3">
+            <div class="pain-icon pain-red">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <h3>No sabes quién debe</h3>
+            <p>La cartera está en la cabeza de una persona. Descubres la mora cuando el estudiante ya se retiró, o entregas un certificado a alguien que quedó debiendo.</p>
+          </div>
+          <div class="pain-card animate-on-scroll delay-4">
+            <div class="pain-icon pain-purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <h3>Cada certificado es un trabajo manual</h3>
+            <p>Abrir la plantilla en Word, cambiar el nombre, revisar que el programa esté bien escrito, exportar a PDF y mandarlo. Multiplicado por cada egresado.</p>
+          </div>
+        </div>
+
+        <div class="pain-solution animate-on-scroll">
+          <p>Con Rapictrl Educación todo eso vive en un solo lugar, <strong>y el estudiante lo ve desde su propio portal.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ MÓDULOS -->
+    <section class="section bg-gray" id="modulos">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-eyebrow eyebrow-edu">La plataforma</div>
+          <h2>Diseñada para cómo funciona de verdad una institución</h2>
+          <p class="section-sub">No es un CRM adaptado a la fuerza. Programas, materias, cortes, docentes y paz y salvo están modelados como los usa un colegio o un instituto técnico.</p>
+        </div>
+
+        <!-- Módulo 1 — Estudiantes y matrícula -->
+        <div class="feature-row mb-feature animate-on-scroll">
+          <div class="feature-copy">
+            <div class="feature-tag feature-tag-edu">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+              Estudiantes y matrícula
+            </div>
+            <h3>La hoja de vida completa de cada estudiante</h3>
+            <p>Documento, acudiente, EPS, RH, modalidad, programas en los que está inscrito, pagos, notas y avance. Todo en una ficha, sin buscar en cuatro carpetas.</p>
+            <ul class="check-list">
+              <li>Matrícula con datos de acudiente y salud</li>
+              <li>Un estudiante en varios programas a la vez</li>
+              <li>Enlaces de inscripción por coordinador</li>
+              <li>Carga masiva desde Excel y archivado por lotes</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div class="mockup-browser">
+              <div class="mockup-chrome">
+                <div class="chrome-dots">
+                  <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
+                </div>
+                <div class="chrome-url">app.rapictrl.com/students</div>
+              </div>
+              <div class="inv-body">
+                <div class="inv-header">
+                  <span class="inv-title">Estudiantes</span>
+                  <div class="inv-btn inv-btn-edu">+ Matricular</div>
+                </div>
+                <div class="inv-list">
+                  <div class="inv-row">
+                    <div class="status-dot dot-ok"></div>
+                    <span class="inv-name">Valentina Osorio B.</span>
+                    <span class="inv-qty">Auxiliar Admin.</span>
+                    <span class="inv-price edu-ok">Al día</span>
+                  </div>
+                  <div class="inv-row">
+                    <div class="status-dot dot-ok"></div>
+                    <span class="inv-name">Santiago Cárdenas R.</span>
+                    <span class="inv-qty">Auxiliar Admin.</span>
+                    <span class="inv-price edu-ok">Al día</span>
+                  </div>
+                  <div class="inv-row">
+                    <div class="status-dot dot-low"></div>
+                    <span class="inv-name">Kevin Torres B.</span>
+                    <span class="inv-qty">Primera Infancia</span>
+                    <span class="inv-price edu-warn">Pendiente</span>
+                  </div>
+                  <div class="inv-row">
+                    <div class="status-dot dot-out"></div>
+                    <span class="inv-name">Óscar Bermúdez F.</span>
+                    <span class="inv-qty">Validación</span>
+                    <span class="inv-price edu-danger">En mora</span>
+                  </div>
+                  <div class="inv-row">
+                    <div class="status-dot dot-ok"></div>
+                    <span class="inv-name">Rosa Cuervo B.</span>
+                    <span class="inv-qty">Validación</span>
+                    <span class="inv-price edu-ok">Al día</span>
+                  </div>
+                </div>
+                <div class="inv-legend">
+                  <span class="legend-item ok">● Matrícula al día</span>
+                  <span class="legend-item low">● Pago pendiente</span>
+                  <span class="legend-item out">● En mora</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Módulo 2 — Aula virtual -->
+        <div class="feature-row feature-row-reverse animate-on-scroll" id="aula">
+          <div class="feature-visual">
+            <div class="mockup-browser">
+              <div class="mockup-chrome">
+                <div class="chrome-dots">
+                  <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
+                </div>
+                <div class="chrome-url">app.rapictrl.com/materias/4</div>
+              </div>
+              <div class="edu-body">
+                <div class="inv-header">
+                  <span class="inv-title">Fundamentos de Contabilidad</span>
+                  <div class="edu-chip">Foro · 3</div>
+                </div>
+                <div class="edu-tree">
+                  <div class="edu-tree-tema">
+                    <span class="edu-tree-caret">▾</span>
+                    <span class="edu-tree-titulo">Tema 1 · La ecuación contable</span>
+                    <span class="edu-tree-meta">2 clases</span>
+                  </div>
+                  <div class="edu-tree-clase done">
+                    <span class="edu-check">✓</span> Clase 1 · Activo, pasivo y patrimonio
+                  </div>
+                  <div class="edu-tree-clase done">
+                    <span class="edu-check">✓</span> Clase 2 · La partida doble en la práctica
+                  </div>
+                  <div class="edu-tree-tema">
+                    <span class="edu-tree-caret">▾</span>
+                    <span class="edu-tree-titulo">Tema 2 · Documentos soporte y caja menor</span>
+                    <span class="edu-tree-meta">2 clases</span>
+                  </div>
+                  <div class="edu-tree-clase done">
+                    <span class="edu-check">✓</span> Clase 1 · Qué documento pide cada operación
+                  </div>
+                  <div class="edu-tree-clase current">
+                    <span class="edu-dot-live"></span> Clase 2 · Arqueo de caja menor
+                  </div>
+                  <div class="edu-tree-examen">
+                    <span class="edu-examen-icon">📝</span>
+                    Examen del tema · Quiz de Contabilidad
+                    <span class="edu-tree-meta">4 preguntas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-copy">
+            <div class="feature-tag feature-tag-edu">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+              Aula virtual
+            </div>
+            <h3>Cada materia es un aula, no una carpeta suelta</h3>
+            <p>Programa → materia → temas → clases. Cada clase lleva su contenido, su video, sus PDFs y sus presentaciones; y al terminar el tema, el examen aparece ahí mismo, sin salir de la página.</p>
+            <ul class="check-list">
+              <li>Contenido, video, PDF y presentaciones por clase</li>
+              <li>Visor 16:9 para PDF, PPTX y SVG</li>
+              <li>Foro por materia y discusión por clase</li>
+              <li>Duplicar una materia completa a otro programa</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Módulo 3 — Notas por periodos -->
+        <div class="feature-row mb-feature animate-on-scroll" id="notas">
+          <div class="feature-copy">
+            <div class="feature-tag feature-tag-edu">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Evaluaciones y notas
+            </div>
+            <h3>Cortes como en la universidad, no una nota suelta</h3>
+            <p>Define los periodos de cada programa y carga las notas por corte. El acumulado se calcula solo y el boletín sale en PDF con el logo de tu institución.</p>
+            <ul class="check-list">
+              <li>Periodos configurables por programa</li>
+              <li>Exámenes en línea con calificación automática</li>
+              <li>Boletín en PDF listo para entregar</li>
+              <li>Histórico de cortes cerrados</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div class="mockup-browser">
+              <div class="mockup-chrome">
+                <div class="chrome-dots">
+                  <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
+                </div>
+                <div class="chrome-url">app.rapictrl.com/calificaciones</div>
+              </div>
+              <div class="edu-body">
+                <div class="inv-header">
+                  <span class="inv-title">Auxiliar Administrativo</span>
+                  <div class="edu-chip">2.º Corte</div>
+                </div>
+                <div class="edu-notas">
+                  <div class="edu-notas-head">
+                    <span>Estudiante</span><span>C1</span><span>C2</span><span>Acum.</span>
+                  </div>
+                  <div class="edu-notas-row">
+                    <span>Valentina Osorio</span><span>4.3</span><span>4.5</span><span class="edu-ok">4.4</span>
+                  </div>
+                  <div class="edu-notas-row">
+                    <span>Santiago Cárdenas</span><span>3.7</span><span>4.0</span><span class="edu-ok">3.9</span>
+                  </div>
+                  <div class="edu-notas-row">
+                    <span>Laura Mendoza</span><span>4.8</span><span>4.6</span><span class="edu-ok">4.7</span>
+                  </div>
+                  <div class="edu-notas-row">
+                    <span>Juan Gaviria</span><span>2.9</span><span>3.1</span><span class="edu-danger">3.0</span>
+                  </div>
+                  <div class="edu-notas-row">
+                    <span>Daniela Herrera</span><span>4.1</span><span>3.8</span><span class="edu-ok">4.0</span>
+                  </div>
+                </div>
+                <div class="edu-notas-foot">
+                  <span>Promedio del grupo</span><strong>4.0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Módulo 4 — Portal del estudiante -->
+        <div class="feature-row feature-row-reverse animate-on-scroll" id="portal">
+          <div class="feature-visual">
+            <div class="mockup-browser">
+              <div class="mockup-chrome">
+                <div class="chrome-dots">
+                  <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
+                </div>
+                <div class="chrome-url">app.rapictrl.com/campus</div>
+              </div>
+              <div class="edu-body">
+                <div class="edu-portal-hi">
+                  <div class="edu-avatar">VO</div>
+                  <div>
+                    <div class="edu-portal-nombre">Hola, Valentina</div>
+                    <div class="edu-portal-prog">Auxiliar Administrativo · 2.º Corte</div>
+                  </div>
+                </div>
+
+                <div class="edu-progress-block">
+                  <div class="edu-progress-row">
+                    <span>Fundamentos de Contabilidad</span><span>75%</span>
+                  </div>
+                  <div class="edu-progress-bar"><i style="width:75%"></i></div>
+                  <div class="edu-progress-row">
+                    <span>Ofimática</span><span>40%</span>
+                  </div>
+                  <div class="edu-progress-bar"><i style="width:40%"></i></div>
+                  <div class="edu-progress-row">
+                    <span>Servicio al Cliente</span><span>100%</span>
+                  </div>
+                  <div class="edu-progress-bar"><i style="width:100%" class="full"></i></div>
+                </div>
+
+                <div class="edu-pendientes">
+                  <div class="edu-pend-title">Lo que sigue</div>
+                  <div class="edu-pend-row">
+                    <span class="edu-pend-tag clase">Clase</span> Arqueo de caja menor
+                  </div>
+                  <div class="edu-pend-row">
+                    <span class="edu-pend-tag examen">Examen</span> Quiz de Ofimática
+                  </div>
+                  <div class="edu-pend-row">
+                    <span class="edu-pend-tag doc">Doc</span> Paz y salvo · disponible
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-copy">
+            <div class="feature-tag feature-tag-edu">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              Portal del estudiante
+            </div>
+            <h3>El estudiante deja de preguntar por WhatsApp</h3>
+            <p>Entra con su documento y ve su avance, qué clase sigue, qué examen tiene pendiente, sus notas por corte y sus documentos. Menos llamadas a secretaría, más autonomía.</p>
+            <ul class="check-list">
+              <li>"Mi avance": qué llevo y qué me falta</li>
+              <li>Acceso directo a la clase o al examen pendiente</li>
+              <li>Boletín, certificados y paz y salvo descargables</li>
+              <li>Funciona desde el celular, sin instalar nada</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Módulo 5 — Documentos y cartera -->
+        <div class="feature-row animate-on-scroll" id="documentos">
+          <div class="feature-copy">
+            <div class="feature-tag feature-tag-edu">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+              Documentos y cartera
+            </div>
+            <h3>Certificados, paz y salvo y cobros sin trabajo manual</h3>
+            <p>El paz y salvo se calcula solo cruzando notas y pagos: si el estudiante debe, el sistema lo dice. Los certificados quedan cargados en su portal y se descargan cuando los necesita.</p>
+            <ul class="check-list">
+              <li>Paz y salvo académico y financiero automático</li>
+              <li>Certificados y diplomas cargados al estudiante</li>
+              <li>Registro de matrícula, mensualidades y derechos de grado</li>
+              <li>Portal público de verificación por cédula</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div class="mockup-browser">
+              <div class="mockup-chrome">
+                <div class="chrome-dots">
+                  <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
+                </div>
+                <div class="chrome-url">app.rapictrl.com/students/128</div>
+              </div>
+              <div class="edu-body">
+                <div class="inv-header">
+                  <span class="inv-title">Rosa Cuervo · Validación</span>
+                  <div class="edu-chip edu-chip-ok">Paz y salvo ✓</div>
+                </div>
+                <div class="fin-stats">
+                  <div class="fin-stat">
+                    <div class="fin-label">Total programa</div>
+                    <div class="fin-value">$1.010.000</div>
+                  </div>
+                  <div class="fin-stat">
+                    <div class="fin-label">Pagado</div>
+                    <div class="fin-value green">$1.010.000</div>
+                  </div>
+                  <div class="fin-stat">
+                    <div class="fin-label">Saldo</div>
+                    <div class="fin-value blue">$0</div>
+                  </div>
+                </div>
+                <div class="txn-table">
+                  <div class="txn-header">
+                    <span>Concepto</span><span>Fecha</span><span>Valor</span>
+                  </div>
+                  <div class="txn-row-fin"><span>Matrícula</span><span>12 feb</span><span class="income">$90.000</span></div>
+                  <div class="txn-row-fin"><span>Mensualidad marzo</span><span>05 mar</span><span class="income">$120.000</span></div>
+                  <div class="txn-row-fin"><span>Mensualidad abril</span><span>04 abr</span><span class="income">$120.000</span></div>
+                  <div class="txn-row-fin"><span>Derechos de grado</span><span>20 jul</span><span class="income">$200.000</span></div>
+                </div>
+                <div class="edu-docs">
+                  <span class="edu-doc">📄 Boletín 2.º corte</span>
+                  <span class="edu-doc">🎓 Diploma</span>
+                  <span class="edu-doc">✅ Paz y salvo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ DEMO BAND -->
+    <section class="edu-demo-band" id="demo">
+      <div class="container">
+        <div class="edu-demo-band-inner animate-on-scroll">
+          <div class="edu-demo-band-copy">
+            <div class="badge badge-edu">🎓 Sin registro · sin tarjeta · sin llamada de ventas</div>
+            <h2>No te lo contamos: entra y míralo</h2>
+            <p>
+              Te abrimos una institución de prueba solo para ti, con tres programas, ocho materias,
+              sus clases y exámenes, dieciocho estudiantes matriculados y las notas del primer corte
+              ya cargadas. Puedes crear, editar y borrar lo que quieras: es tuya y se borra sola.
+            </p>
+            <div class="edu-demo-band-actions">
+              <a href="https://app.rapictrl.com/demo" class="btn-white btn-lg">Entrar al demo ahora <span class="arrow">→</span></a>
+              <a href="#pricing" class="btn-glass">Ver precios</a>
+            </div>
+          </div>
+          <ul class="edu-demo-band-list">
+            <li><strong>3</strong> programas técnicos y de validación</li>
+            <li><strong>8</strong> materias con su docente asignado</li>
+            <li><strong>19</strong> clases con contenido real</li>
+            <li><strong>8</strong> exámenes con 27 preguntas</li>
+            <li><strong>18</strong> estudiantes con notas y pagos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ HOW IT WORKS -->
+    <section class="section bg-white" id="how">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-eyebrow eyebrow-edu">Cómo se empieza</div>
+          <h2>De la hoja de cálculo a la plataforma, en una semana</h2>
+          <p class="section-sub">No hay que digitar todo de nuevo ni parar el semestre.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card animate-on-scroll delay-1">
+            <div class="step-num step-num-edu">1</div>
+            <div class="step-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            </div>
+            <h3>Carga tus programas</h3>
+            <p>Crea cada programa con su duración, matrícula, mensualidad y periodos. Las materias se duplican entre programas cuando se repiten.</p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step-card animate-on-scroll delay-2">
+            <div class="step-num step-num-edu">2</div>
+            <div class="step-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+            </div>
+            <h3>Sube tus estudiantes</h3>
+            <p>Importa el listado desde Excel o comparte el enlace de inscripción para que se matriculen solos y lleguen ya asignados al programa.</p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step-card animate-on-scroll delay-3">
+            <div class="step-num step-num-edu">3</div>
+            <div class="step-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3>Abre el portal</h3>
+            <p>Los docentes cargan sus clases y notas; los estudiantes entran con su documento. Secretaría deja de ser el cuello de botella.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ FOR WHO -->
+    <section class="section bg-gray" id="for-who">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-eyebrow eyebrow-edu">¿Para quién es?</div>
+          <h2>Pensada para la educación para el trabajo</h2>
+          <p class="section-sub">Si manejas programas por cohortes, cortes de notas y cartera de estudiantes, esto es para ti.</p>
+        </div>
+        <div class="who-grid">
+          <div class="who-card animate-on-scroll delay-1">
+            <div class="who-icon who-icon-edu">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>Institutos técnicos</h3>
+            <p>Programas técnicos laborales por cohortes, con matrícula, mensualidades y derechos de grado.</p>
+          </div>
+          <div class="who-card animate-on-scroll delay-2">
+            <div class="who-icon who-icon-edu">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Colegios y validación</h3>
+            <p>Validación de bachillerato y educación de adultos, con boletines por periodo y actas.</p>
+          </div>
+          <div class="who-card animate-on-scroll delay-3">
+            <div class="who-icon who-icon-edu">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <h3>Academias y cursos en línea</h3>
+            <p>Formación virtual o mixta, con clases grabadas, material descargable y exámenes automáticos.</p>
+          </div>
+          <div class="who-card animate-on-scroll delay-4">
+            <div class="who-icon who-icon-edu">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+            </div>
+            <h3>Centros de formación</h3>
+            <p>Capacitación empresarial y certificaciones, con verificación pública de los certificados emitidos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ PRICING -->
+    <section class="section bg-dark" id="pricing">
+      <div class="container">
+        <div class="section-header section-header-dark animate-on-scroll">
+          <div class="section-eyebrow eyebrow-edu-light">Precios</div>
+          <h2>El módulo académico viene en el plan Empresarial</h2>
+          <p class="section-sub text-slate">Usuarios ilimitados, todos los módulos y soporte dedicado. Sin costo por estudiante.</p>
+        </div>
+
+        <div class="edu-price-wrap animate-on-scroll">
+          <div class="pricing-card pricing-popular edu-price-card">
+            <div class="popular-badge edu-popular-badge">🎓 Recomendado para instituciones</div>
+            <div class="plan-name">Empresarial</div>
+            <div class="plan-price">$125.000<span>/mes</span></div>
+            <div class="plan-users">Usuarios ilimitados · 5 sedes</div>
+            <ul class="plan-features">
+              <li>Módulo académico completo</li>
+              <li>Aula virtual con clases y exámenes</li>
+              <li>Portal del estudiante y del docente</li>
+              <li>Notas por periodos y boletines PDF</li>
+              <li>Certificados y paz y salvo</li>
+              <li>Soporte dedicado y onboarding</li>
+            </ul>
+            <a href="https://app.rapictrl.com/demo" class="btn-plan edu-price-cta">Probar el demo primero</a>
+            <a href="https://wa.me/570000000000?text=Hola,%20soy%20de%20una%20instituci%C3%B3n%20educativa%20y%20quiero%20cotizar%20Rapictrl" target="_blank" class="btn-plan edu-price-alt">Hablar con el equipo</a>
+          </div>
+
+          <div class="edu-price-note">
+            <h3>¿Institución grande o con varias sedes?</h3>
+            <p>Si manejas más de mil estudiantes, varias sedes o necesitas migración de datos históricos, armamos un plan a la medida. Escríbenos y lo revisamos con números reales.</p>
+            <ul class="check-list check-list-light">
+              <li>Migración de tus estudiantes y notas actuales</li>
+              <li>Capacitación para docentes y secretaría</li>
+              <li>Facturación anual con descuento</li>
+            </ul>
+            <a href="https://wa.me/570000000000?text=Hola,%20quiero%20cotizar%20Rapictrl%20para%20una%20instituci%C3%B3n%20con%20varias%20sedes" target="_blank" class="btn-outline btn-outline-light">Cotizar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ FAQ -->
+    <section class="section bg-white" id="faq">
+      <div class="container faq-container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-eyebrow eyebrow-edu">FAQ</div>
+          <h2>Preguntas de instituciones como la tuya</h2>
+        </div>
+        <div class="faq-list animate-on-scroll">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿El demo tiene todas las funciones o está recortado?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Es la plataforma real con el módulo académico completo, solo que sembrada con datos de ejemplo. Lo único que no trae son archivos subidos (videos y PDFs de clase), porque esos los cargas tú. Todo lo demás lo puedes crear, editar y borrar.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Tengo que pasar mis estudiantes uno por uno?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. Puedes importar el listado desde Excel, o compartir un enlace de inscripción por programa (uno por coordinador) para que los estudiantes se matriculen solos y lleguen ya asignados. Si vienes de otra plataforma, te ayudamos con la migración.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Se cobra por estudiante?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. El plan Empresarial es una tarifa fija mensual con usuarios ilimitados y sin costo por estudiante. Si creces de 80 a 400 alumnos, pagas lo mismo.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Los docentes pueden entrar con su propia cuenta?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sí. Cada docente tiene su acceso y ve únicamente los programas que le asignaste: sus materias, sus clases y las notas de sus estudiantes. No puede tocar la información del resto de la institución.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cómo entra el estudiante a su portal?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Con su número de documento, desde el celular y sin instalar nada. Ahí ve su avance, la clase que sigue, sus exámenes pendientes, las notas por corte y sus documentos (boletín, certificados y paz y salvo).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Puedo manejar varias sedes o razones sociales?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sí. El plan Empresarial incluye varias sedes, cada una con sus propios programas, estudiantes y usuarios. Desde el mismo login cambias de sede sin volver a autenticarte.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Qué pasa con los datos del demo?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>El demo es tuyo y de nadie más: nadie ve lo que haces ahí. A los tres días se borra automáticamente, junto con todo lo que hayas creado. Si decides contratar, empiezas con una institución limpia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════ FOOTER CTA -->
+  <footer class="footer">
+    <div class="footer-cta edu-footer-cta">
+      <div class="container">
+        <div class="footer-cta-inner animate-on-scroll">
+          <div class="badge badge-shield">🎓 Demo completo, sin registro</div>
+          <h2>Mira cómo se ve tu institución adentro</h2>
+          <p>Cinco segundos y estás dentro de un instituto completo. Sin formularios, sin llamada de ventas, sin compromiso.</p>
+          <div class="footer-actions">
+            <a href="https://app.rapictrl.com/demo" class="btn-primary btn-edu btn-lg">
+              Entrar al demo educativo →
+            </a>
+            <a href="https://wa.me/570000000000?text=Hola,%20soy%20de%20una%20instituci%C3%B3n%20educativa%20y%20quiero%20saber%20m%C3%A1s%20de%20Rapictrl" target="_blank" class="btn-glass btn-lg">
+              Hablar con el equipo
+            </a>
+          </div>
+          <div class="trust-badges footer-trust">
+            <span>✓ Sin tarjeta de crédito</span>
+            <span>✓ Sin costo por estudiante</span>
+            <span>✓ Migración acompañada</span>
+            <span>✓ Soporte en español</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span class="footer-brand"><img src="logo.png" alt="Rapictrl" class="footer-logo-mark" />© <span id="year"></span> Rapictrl. Todos los derechos reservados.</span>
+        <nav class="footer-links">
+          <a href="index.html">Rapictrl general</a>
+          <a href="#pricing">Precios</a>
+          <a href="https://app.rapictrl.com/demo">Demo</a>
+          <a href="https://wa.me/570000000000" target="_blank">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

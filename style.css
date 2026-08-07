@@ -451,6 +451,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .chrome-url {
   flex: 1;
+  /* Sin min-width:0 el ítem flex no baja de su ancho de contenido y una URL
+     larga desborda el mockup (y con él la página) en móvil, pese al ellipsis. */
+  min-width: 0;
   background: rgba(255,255,255,.1);
   border-radius: 5px;
   padding: .25rem .75rem;
@@ -636,7 +639,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ── Section headers ─────────────────────────────────────── */
 .section-header { text-align: center; margin-bottom: 3.5rem; }
 .section-header-dark { color: #fff; }
-.section-header-dark h2 { color: #fff; }
+/* Doble clase a propósito: `.section-header h2` (más abajo) pinta el título
+   de oscuro y, con la misma especificidad, ganaba por ir después. Eso dejaba
+   el h2 de la sección de precios casi invisible sobre el fondo navy. */
+.section-header.section-header-dark h2 { color: #fff; }
 
 .section-eyebrow {
   display: inline-block;
@@ -1074,6 +1080,69 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-color: transparent;
 }
 .btn-plan-primary:hover { opacity: .9; }
+
+/* Banner del demo educativo, debajo de los planes */
+.edu-demo {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(124,58,237,.22), rgba(37,99,235,.14));
+  border: 1px solid rgba(167,139,250,.3);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.edu-demo-text { flex: 1 1 320px; }
+.edu-demo-eyebrow {
+  font-size: .8rem;
+  font-weight: 700;
+  color: #c4b5fd;
+  margin-bottom: .5rem;
+}
+.edu-demo h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 .5rem;
+}
+.edu-demo p {
+  font-size: .9rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.6;
+}
+.edu-demo-actions {
+  flex: 0 0 auto;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: .6rem;
+}
+.edu-demo-cta {
+  background: #fff;
+  color: #6d28d9;
+  border-color: transparent;
+}
+.edu-demo-cta:hover { background: #f5f3ff; opacity: 1; }
+.edu-demo-link {
+  font-size: .78rem;
+  font-weight: 600;
+  color: #c4b5fd;
+  text-align: center;
+}
+.edu-demo-link:hover { color: #ddd6fe; }
+
+/* Enlace "Educación" del menú principal */
+.main-nav a.nav-edu { color: #c4b5fd; font-weight: 700; }
+.main-nav a.nav-edu:hover { color: #ddd6fe; }
+.site-header.scrolled .main-nav a.nav-edu { color: #7c3aed; }
+
+@media (max-width: 640px) {
+  .edu-demo { padding: 1.5rem; gap: 1.25rem; }
+  .edu-demo-actions { width: 100%; }
+}
 
 /* Plan price special formatting */
 .pricing-card .plan-price {
