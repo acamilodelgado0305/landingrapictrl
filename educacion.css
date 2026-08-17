@@ -14,12 +14,15 @@
      violet-50  : #f5f3ff
    La marca (rojo #fc454d) se conserva en el logo y el header: es la
    misma empresa, no un producto distinto.
+
+   Superficies de mockup (deben coincidir con style.css):
+     shell #10122e · superficie #1c1e4a · texto #e2e8f0 · sec. #9aa0d8
 ═══════════════════════════════════════════════════════════ */
 
 /* ── Marca: "Rapictrl Educación" en el logo ──────────────── */
 .logo-suffix {
   font-size: .7rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: .04em;
   text-transform: uppercase;
   color: #c4b5fd;
@@ -44,67 +47,105 @@
 
 /* ── Botón primario en versión educación ─────────────────── */
 .btn-primary.btn-edu {
-  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  box-shadow: 0 10px 28px rgba(124,58,237,.42);
 }
-.btn-primary.btn-edu:hover { filter: brightness(1.08); }
+.btn-primary.btn-edu:hover { box-shadow: 0 14px 34px rgba(124,58,237,.52); }
+
+/* ── Fondo del hero en clave violeta ─────────────────────── */
+body.edu .hero {
+  background:
+    radial-gradient(1000px 600px at 110% 10%, rgba(124,58,237,.42), transparent 55%),
+    radial-gradient(800px 520px at -10% 90%, rgba(29,78,216,.3), transparent 55%),
+    linear-gradient(160deg, #0d0d2b 0%, #1d174a 55%, #0d0d2b 100%);
+}
 
 /* ── Acentos de sección ──────────────────────────────────── */
 .badge-edu {
-  background: rgba(124,58,237,.18);
-  border-color: rgba(167,139,250,.42);
+  background: rgba(124,58,237,.2);
+  border-color: rgba(167,139,250,.45);
   color: #ddd6fe;
 }
-.eyebrow-edu { color: #7c3aed; }
-.eyebrow-edu-light { color: #c4b5fd; }
+.eyebrow-edu { color: #7c3aed; background: #f5f3ff; border-color: #ddd6fe; }
+.eyebrow-edu-light { color: #c4b5fd; background: rgba(124,58,237,.16); border-color: rgba(167,139,250,.4); }
 
 .text-gradient-edu {
-  background: linear-gradient(90deg, #a78bfa, #60a5fa);
+  background: linear-gradient(90deg, #a78bfa 0%, #7fb2ff 60%, #2dd4bf 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero-glow.edu-glow { background: radial-gradient(circle, rgba(124,58,237,.35) 0%, transparent 70%); }
+.hero-glow.edu-glow { background: radial-gradient(circle, rgba(124,58,237,.4) 0%, transparent 70%); }
 
 .feature-tag-edu { color: #7c3aed; background: #f5f3ff; border-color: #ddd6fe; }
-.step-num-edu    { background: #7c3aed; }
-.who-icon-edu    { background: #f5f3ff; }
+.who-icon-edu    { background: linear-gradient(135deg, #f0e9ff 0%, #e3edff 100%); }
+
+/* Número del paso en violeta (pisa el gradiente rojo del base) */
+.step-num-edu {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body.edu .step-card:hover { border-color: #ddd6fe; }
+body.edu .step-icon { background: linear-gradient(135deg, #f0e9ff 0%, #e3edff 100%); }
+body.edu .step-link { color: #7c3aed; }
+body.edu .step-connector { background: repeating-linear-gradient(to bottom, #c4b5fd 0 6px, transparent 6px 12px); }
+@media (min-width: 768px) {
+  body.edu .step-connector { background: repeating-linear-gradient(to right, #c4b5fd 0 6px, transparent 6px 12px); }
+}
+body.edu .faq-item.open { border-color: #ddd6fe; }
+body.edu .faq-question:hover { color: #7c3aed; }
+body.edu .faq-item.open .faq-icon { color: #7c3aed; }
+body.edu .pain-solution {
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  box-shadow: 0 18px 44px rgba(124,58,237,.32);
+}
 
 /* Barras del gráfico del hero, en tonos de educación */
 .bar-edu   { background: linear-gradient(180deg, #a78bfa, #7c3aed); }
 .bar-edu-2 { background: linear-gradient(180deg, #93c5fd, #3b82f6); }
 
 /* Estado neutro en la lista de movimientos (ni ingreso ni egreso) */
-.txn-amount.neutral { color: #94a3b8; }
+.txn-amount.neutral { color: #9aa0d8; }
 
 /* Semáforo académico reutilizado en varias tablas.
-   Tonos claros porque todos los mockups van sobre fondo oscuro (#0f172a). */
+   Tonos claros porque todos los mockups van sobre fondo oscuro. */
 .edu-ok     { color: #4ade80 !important; font-weight: 700; }
 .edu-warn   { color: #facc15 !important; font-weight: 700; }
 .edu-danger { color: #f87171 !important; font-weight: 700; }
 
 .inv-btn.inv-btn-edu { background: #7c3aed; }
 
+/* Sombra violeta para los mockups de esta landing */
+body.edu .mockup-browser {
+  box-shadow:
+    0 28px 70px rgba(5,6,24,.55),
+    0 0 0 1px rgba(255,255,255,.05),
+    0 44px 90px -30px rgba(124,58,237,.4);
+}
+
 /* ── Feature rows sobre fondo claro ──────────────────────── */
 /* style.css pinta .feature-copy en blanco (pensado para la sección oscura)
    y solo lo corrige dentro de #features. Nuestra sección de módulos se
    llama #modulos, así que replicamos ese ajuste aquí. */
-#modulos .feature-copy { color: #111827; }
+#modulos .feature-copy { color: #131332; }
 #modulos .feature-copy h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 1rem;
   letter-spacing: -.02em;
-  color: #111827;
+  color: #131332;
 }
-#modulos .feature-copy p { color: #6b7280; }
+#modulos .feature-copy p { color: #63678f; }
+#modulos .check-list li::before { background: #f0e9ff; color: #7c3aed; }
 
 /* ── Cuerpo genérico de los mockups académicos ───────────── */
 /* Todos los mockups viven dentro de .mockup-browser, que es OSCURO
-   (#0f172a). Estos bloques siguen la misma paleta que .inv-body y
-   .fin-body de style.css: superficie #1e293b, texto #e2e8f0,
-   secundario #94a3b8. No usar tonos claros aquí. */
+   (#10122e). Superficie #1c1e4a, texto #e2e8f0, secundario #9aa0d8.
+   No usar tonos claros aquí. */
 .edu-body {
   padding: .75rem;
   display: flex;
@@ -145,9 +186,9 @@
   font-size: .68rem;
   font-weight: 700;
   color: #e2e8f0;
-  background: #1e293b;
+  background: #1c1e4a;
   border: 1px solid rgba(255,255,255,.05);
-  border-radius: .5rem;
+  border-radius: .6rem;
   padding: .4rem .6rem;
 }
 .edu-tree-caret { color: #a78bfa; font-size: .6rem; }
@@ -155,7 +196,7 @@
 .edu-tree-meta {
   font-size: .58rem;
   font-weight: 600;
-  color: #64748b;
+  color: #6a6fa5;
   white-space: nowrap;
 }
 .edu-tree-clase {
@@ -163,9 +204,9 @@
   align-items: center;
   gap: .45rem;
   font-size: .65rem;
-  color: #94a3b8;
+  color: #9aa0d8;
   padding: .3rem .6rem .3rem 1.5rem;
-  border-radius: .4rem;
+  border-radius: .5rem;
 }
 .edu-tree-clase.current {
   color: #ddd6fe;
@@ -189,7 +230,7 @@
   color: #ddd6fe;
   background: rgba(124,58,237,.1);
   border: 1px dashed rgba(167,139,250,.45);
-  border-radius: .5rem;
+  border-radius: .6rem;
   padding: .4rem .6rem;
   margin-top: .2rem;
 }
@@ -212,13 +253,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .03em;
-  color: #64748b;
+  color: #6a6fa5;
   background: rgba(255,255,255,.04);
   border-radius: .5rem .5rem 0 0;
 }
 .edu-notas-head span:not(:first-child),
 .edu-notas-row  span:not(:first-child) { text-align: center; }
-.edu-notas-row { color: #cbd5e1; border-bottom: 1px solid rgba(255,255,255,.04); }
+.edu-notas-row { color: #c7cbee; border-bottom: 1px solid rgba(255,255,255,.04); }
 .edu-notas-row:last-child { border-bottom: none; }
 .edu-notas-row span:first-child {
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
@@ -228,7 +269,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: .62rem;
-  color: #94a3b8;
+  color: #9aa0d8;
   padding: .45rem .4rem 0;
   border-top: 1px solid rgba(255,255,255,.06);
 }
@@ -247,14 +288,14 @@
   flex-shrink: 0;
 }
 .edu-portal-nombre { font-size: .72rem; font-weight: 800; color: #e2e8f0; }
-.edu-portal-prog   { font-size: .6rem; color: #94a3b8; }
+.edu-portal-prog   { font-size: .6rem; color: #9aa0d8; }
 
 .edu-progress-block { display: flex; flex-direction: column; gap: .28rem; }
 .edu-progress-row {
   display: flex;
   justify-content: space-between;
   font-size: .62rem;
-  color: #cbd5e1;
+  color: #c7cbee;
   margin-top: .2rem;
 }
 .edu-progress-row span:last-child { font-weight: 700; color: #c4b5fd; }
@@ -284,22 +325,22 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .03em;
-  color: #64748b;
+  color: #6a6fa5;
 }
 .edu-pend-row {
   display: flex;
   align-items: center;
   gap: .4rem;
   font-size: .65rem;
-  color: #cbd5e1;
+  color: #c7cbee;
 }
 .edu-pend-tag {
   font-size: .52rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .03em;
-  border-radius: .25rem;
-  padding: .1rem .3rem;
+  border-radius: 9999px;
+  padding: .1rem .38rem;
   flex-shrink: 0;
 }
 .edu-pend-tag.clase  { color: #93c5fd; background: rgba(59,130,246,.16); }
@@ -311,8 +352,8 @@
 .edu-doc {
   font-size: .58rem;
   font-weight: 600;
-  color: #cbd5e1;
-  background: #1e293b;
+  color: #c7cbee;
+  background: #1c1e4a;
   border: 1px solid rgba(255,255,255,.06);
   border-radius: 9999px;
   padding: .2rem .5rem;
@@ -320,8 +361,13 @@
 
 /* ── Banda de demo (sección completa) ────────────────────── */
 .edu-demo-band {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #0f172a 0%, #4c1d95 55%, #6d28d9 100%);
+  padding: 5.5rem 0;
+  background:
+    radial-gradient(800px 500px at 100% 0%, rgba(45,212,191,.16), transparent 55%),
+    linear-gradient(135deg, #0d0d2b 0%, #4c1d95 55%, #6d28d9 100%);
+  border-radius: clamp(1.5rem, 3.5vw, 2.75rem);
+  margin: clamp(.75rem, 2vw, 1.5rem);
+  overflow: hidden;
 }
 .edu-demo-band-inner {
   display: grid;
@@ -333,14 +379,15 @@
   .edu-demo-band-inner { grid-template-columns: 1.4fr 1fr; gap: 3.5rem; }
 }
 .edu-demo-band-copy h2 {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  font-weight: 900;
+  font-size: clamp(1.85rem, 4.2vw, 2.9rem);
+  font-weight: 800;
   color: #fff;
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 1rem 0 .85rem;
+  letter-spacing: -.025em;
 }
 .edu-demo-band-copy p {
-  color: #cbd5e1;
+  color: #c7cbee;
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1.75rem;
@@ -352,11 +399,11 @@
   display: flex;
   flex-direction: column;
   gap: .6rem;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+  backdrop-filter: blur(8px);
 }
 .edu-demo-band-list li {
   display: flex;
@@ -366,8 +413,9 @@
   color: #e2e8f0;
 }
 .edu-demo-band-list strong {
-  font-size: 1.35rem;
-  font-weight: 900;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
   color: #c4b5fd;
   min-width: 2.1rem;
   text-align: right;
@@ -388,11 +436,16 @@
 }
 
 .edu-price-card.pricing-popular {
-  border-color: #a78bfa;
-  box-shadow: 0 0 0 1px #a78bfa, 0 16px 40px rgba(124,58,237,.28);
+  border-color: transparent;
+  background: linear-gradient(160deg, rgba(124,58,237,.3), rgba(59,130,246,.14));
+  box-shadow: 0 0 0 2px #a78bfa, 0 22px 50px rgba(124,58,237,.32);
   transform: none;
 }
-.edu-popular-badge { background: #7c3aed; }
+.edu-price-card.pricing-popular:hover { transform: translateY(-4px); }
+.edu-popular-badge {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  box-shadow: 0 8px 20px rgba(124,58,237,.4);
+}
 
 .edu-price-cta {
   background: #fff;
@@ -404,40 +457,47 @@
 .edu-price-alt { margin-top: .5rem; }
 
 .edu-price-note {
-  color: #cbd5e1;
+  color: #c7cbee;
   padding-top: .5rem;
 }
 .edu-price-note h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: #fff;
   margin-bottom: .6rem;
+  letter-spacing: -.015em;
 }
 .edu-price-note p {
   font-size: .95rem;
   line-height: 1.7;
   margin-bottom: 1.1rem;
 }
-.check-list-light li { color: #cbd5e1; }
+.check-list-light li { color: #c7cbee; }
+.check-list-light li::before { background: rgba(124,58,237,.25); color: #c4b5fd; }
 .btn-outline-light {
-  display: inline-block;
+  display: inline-flex;
   margin-top: 1.25rem;
   color: #fff;
-  border-color: rgba(255,255,255,.3);
+  border-color: rgba(255,255,255,.35);
 }
 .btn-outline-light:hover {
   border-color: #c4b5fd;
   color: #c4b5fd;
-  background: rgba(124,58,237,.12);
+  background: rgba(124,58,237,.14);
 }
 
 /* ── Footer CTA en tono educación ────────────────────────── */
-.edu-footer-cta { background: linear-gradient(150deg, #0f172a 0%, #3b0764 55%, #0f172a 100%); }
+.edu-footer-cta {
+  background:
+    radial-gradient(900px 500px at 90% 0%, rgba(124,58,237,.4), transparent 60%),
+    radial-gradient(700px 460px at 0% 100%, rgba(29,78,216,.28), transparent 60%),
+    linear-gradient(150deg, #0d0d2b 0%, #2a1458 55%, #0d0d2b 100%);
+}
 
 /* ── Ajustes móviles ─────────────────────────────────────── */
 @media (max-width: 640px) {
   .logo-suffix { display: none; }
-  .edu-demo-band { padding: 3.5rem 0; }
-  .edu-demo-band-list { padding: 1.15rem; }
-  .edu-demo-band-list strong { font-size: 1.15rem; }
+  .edu-demo-band { padding: 3.75rem 0; }
+  .edu-demo-band-list { padding: 1.25rem; }
+  .edu-demo-band-list strong { font-size: 1.2rem; }
 }
