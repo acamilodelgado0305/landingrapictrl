@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rapictrl | Conoce el Estado Exacto de tu Negocio en Tiempo Real</title>
-  <meta name="description" content="Rapictrl te da visibilidad total sobre tus finanzas, inventario y rentabilidad. Sabe exactamente en qué punto está tu negocio, en todo momento. Prueba 14 días gratis." />
-  <meta name="keywords" content="software administrativo, gestión financiera, control de inventario, software para pymes, Rapictrl" />
+  <title>Rapictrl | Ventas, gastos, inventario y clientes en un solo lugar</title>
+  <meta name="description" content="Rapictrl reúne ingresos y gastos, facturas y cotizaciones, inventario, pedidos, CRM y cartera en una sola app para el celular y el computador. Prueba 14 días gratis, sin tarjeta." />
+  <meta name="keywords" content="software para negocios, control de gastos, facturas y cotizaciones, inventario, pedidos, CRM, cuentas por cobrar, software para academias, Rapictrl, Colombia" />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Rapictrl | Conoce el Estado Exacto de tu Negocio" />
-  <meta property="og:description" content="Finanzas, inventario y reportes en un solo lugar. Toma decisiones con datos reales, no con suposiciones." />
+  <meta property="og:title" content="Rapictrl | Todo tu negocio en un solo lugar" />
+  <meta property="og:description" content="Ingresos y gastos, facturas, inventario, pedidos, clientes y cartera en una sola app. 14 días gratis, sin tarjeta." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rapictrl.com" />
   <meta property="og:image" content="https://rapictrl.com/PORTADA.png" />
@@ -20,309 +21,661 @@
   <link rel="apple-touch-icon" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════════════════ HEADER -->
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a href="#hero" class="logo"><img src="logo.png" alt="Rapictrl" class="logo-mark" />Rapictrl</a>
+  <!-- Íconos (trazo de 2px sobre 24x24). Se usan con <svg class="i"><use href="#i-..."/></svg> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M6 17v-6"/><path d="M10 17v-6"/><path d="M14 17v-6"/><path d="M18 17v-6"/><path d="M12 3 21 8H3z"/></symbol>
+    <symbol id="i-contacts" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7.5 18a4.5 4.5 0 0 1 9 0"/></symbol>
+    <symbol id="i-kanban" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.5L22 7H6"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/><path d="M22 10v6"/></symbol>
+    <symbol id="i-board" viewBox="0 0 24 24"><path d="M2 3h20"/><path d="M3 3v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3"/><path d="m7 21 5-5 5 5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 3.5a4 4 0 0 1 0 7.5"/><path d="M22 21a7 7 0 0 0-4-6.3"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><path d="m21 11-8.5 8.5a5 5 0 0 1-7-7L14 4a3.5 3.5 0 0 1 5 5l-8.5 8.5a2 2 0 0 1-3-3L15 7"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4.5 12 3.5 3.5 0 0 0 6 19z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-login" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9 4.5 4h15L21 9"/><path d="M3 9h18v1.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v8h14v-8"/><path d="M10 21v-5h4v5"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2A3 3 0 0 0 12 8c-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2a3 3 0 0 1-2.8-1.2"/><path d="M12 6v2"/><path d="M12 16v2"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="i-google" viewBox="0 0 24 24"><path stroke="none" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path stroke="none" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path stroke="none" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path stroke="none" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></symbol>
+  </svg>
 
-      <nav class="main-nav" id="main-nav">
-        <a href="#benefits">Beneficios</a>
-        <a href="#features">Funcionalidades</a>
-        <a href="#pricing">Precios</a>
-        <a href="#faq">FAQ</a>
-        <a href="educacion.html" class="nav-edu">Educación</a>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- ═══════════════════════════════════════════════════════ BARRA SUPERIOR -->
+  <div class="promo">
+    <div class="wrap promo-inner">
+      <span><strong>14 días gratis</strong>, sin tarjeta de crédito.</span>
+      <a class="promo-link" href="https://wa.me/573223267797?text=Hola,%20quiero%20empezar%20con%20Rapictrl%20y%20necesito%20ayuda" target="_blank" rel="noopener" data-cta="promo">Te ayudamos a empezar por WhatsApp <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ ENCABEZADO -->
+  <header class="hdr" id="hdr">
+    <div class="wrap hdr-inner">
+      <a href="#inicio" class="brand"><img src="logo.png" alt="" width="30" height="30" />Rapictrl</a>
+
+      <nav class="nav" aria-label="Principal">
+        <div class="nav-dd">
+          <button class="nav-link nav-dd-btn" id="mega-btn" aria-expanded="false" aria-controls="mega">
+            Funcionalidades <svg class="i i-xs"><use href="#i-chev"/></svg>
+          </button>
+          <div class="mega" id="mega" hidden>
+            <div class="mega-col">
+              <p class="mega-label">Gestión del negocio</p>
+              <div class="mega-grid">
+                <a href="#demo" data-goto="movimientos" class="mega-item"><span class="ico ico-blue"><svg class="i"><use href="#i-swap"/></svg></span><span><b>Movimientos</b><small>Ingresos y gastos</small></span></a>
+                <a href="#demo" data-goto="facturas" class="mega-item"><span class="ico ico-indigo"><svg class="i"><use href="#i-file"/></svg></span><span><b>Facturas</b><small>Facturas y cotizaciones</small></span></a>
+                <a href="#demo" data-goto="cuentas" class="mega-item"><span class="ico ico-rose"><svg class="i"><use href="#i-bank"/></svg></span><span><b>Cuentas</b><small>Por cobrar y por pagar</small></span></a>
+                <a href="#demo" data-goto="contactos" class="mega-item"><span class="ico ico-orange"><svg class="i"><use href="#i-contacts"/></svg></span><span><b>Contactos</b><small>Clientes y proveedores</small></span></a>
+                <a href="#demo" data-goto="crm" class="mega-item"><span class="ico ico-amber"><svg class="i"><use href="#i-kanban"/></svg></span><span><b>CRM</b><small>Prospectos en tablero</small></span></a>
+                <a href="#demo" data-goto="inventario" class="mega-item"><span class="ico ico-cyan"><svg class="i"><use href="#i-box"/></svg></span><span><b>Inventario</b><small>Productos y existencias</small></span></a>
+                <a href="#demo" data-goto="pedidos" class="mega-item"><span class="ico ico-green"><svg class="i"><use href="#i-cart"/></svg></span><span><b>Pedidos</b><small>Ventas y caja</small></span></a>
+              </div>
+            </div>
+            <div class="mega-col mega-side">
+              <p class="mega-label">Educación</p>
+              <a href="#demo" data-goto="estudiantes" class="mega-item"><span class="ico ico-violet"><svg class="i"><use href="#i-cap"/></svg></span><span><b>Estudiantes</b><small>Matrícula y certificados</small></span></a>
+              <a href="#demo" data-goto="docentes" class="mega-item"><span class="ico ico-violet"><svg class="i"><use href="#i-board"/></svg></span><span><b>Docentes</b><small>Acceso a sus programas</small></span></a>
+              <a href="#demo" data-goto="programas" class="mega-item"><span class="ico ico-violet"><svg class="i"><use href="#i-book"/></svg></span><span><b>Programas</b><small>Aula virtual y notas</small></span></a>
+              <a href="educacion.html" class="mega-cta">Ver Rapictrl Educación <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </div>
+        <a class="nav-link" href="educacion.html">Educación</a>
+        <a class="nav-link" href="#precios">Precios</a>
+        <a class="nav-link" href="#preguntas">Preguntas</a>
       </nav>
 
-      <div class="header-actions">
-        <a href="https://app.rapictrl.com/login" class="btn-ghost">Iniciar Sesión</a>
-        <a href="https://wa.me/573223267797?text=Hola,%20quisiera%20una%20demo%20de%20Rapictrl" target="_blank" class="btn-outline">Solicitar Demo</a>
-        <a href="https://app.rapictrl.com/register" class="btn-primary">Empieza Gratis</a>
+      <div class="hdr-actions">
+        <a class="nav-link hdr-login" href="https://app.rapictrl.com/login">Iniciar sesión</a>
+        <a class="btn btn-primary btn-sm hdr-cta" href="https://app.rapictrl.com/register" data-cta="header">Empieza gratis</a>
+        <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="sheet">
+          <svg class="i i-open"><use href="#i-menu"/></svg><svg class="i i-close"><use href="#i-x"/></svg>
+        </button>
       </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
     </div>
 
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <nav>
-        <a href="#benefits" class="mobile-link">Beneficios</a>
-        <a href="#features" class="mobile-link">Funcionalidades</a>
-        <a href="#pricing" class="mobile-link">Precios</a>
-        <a href="#faq" class="mobile-link">FAQ</a>
-        <a href="educacion.html" class="mobile-link">Educación</a>
-        <hr class="mobile-divider" />
-        <a href="https://app.rapictrl.com/login" class="mobile-link">Iniciar Sesión</a>
-        <a href="https://wa.me/573223267797?text=Hola,%20quisiera%20una%20demo%20de%20Rapictrl" target="_blank" class="btn-outline w-full text-center block">Solicitar Demo</a>
-        <a href="https://app.rapictrl.com/register" class="btn-primary w-full text-center block mt-2">Empieza Gratis</a>
-      </nav>
+    <!-- Menú del celular -->
+    <div class="sheet" id="sheet" hidden>
+      <div class="wrap sheet-inner">
+        <p class="mega-label">Funcionalidades</p>
+        <div class="sheet-grid">
+          <a href="#demo" data-goto="movimientos"><span class="ico ico-blue"><svg class="i"><use href="#i-swap"/></svg></span>Movimientos</a>
+          <a href="#demo" data-goto="facturas"><span class="ico ico-indigo"><svg class="i"><use href="#i-file"/></svg></span>Facturas</a>
+          <a href="#demo" data-goto="cuentas"><span class="ico ico-rose"><svg class="i"><use href="#i-bank"/></svg></span>Cuentas</a>
+          <a href="#demo" data-goto="contactos"><span class="ico ico-orange"><svg class="i"><use href="#i-contacts"/></svg></span>Contactos</a>
+          <a href="#demo" data-goto="crm"><span class="ico ico-amber"><svg class="i"><use href="#i-kanban"/></svg></span>CRM</a>
+          <a href="#demo" data-goto="inventario"><span class="ico ico-cyan"><svg class="i"><use href="#i-box"/></svg></span>Inventario</a>
+          <a href="#demo" data-goto="pedidos"><span class="ico ico-green"><svg class="i"><use href="#i-cart"/></svg></span>Pedidos</a>
+          <a href="#demo" data-goto="estudiantes"><span class="ico ico-violet"><svg class="i"><use href="#i-cap"/></svg></span>Académico</a>
+        </div>
+        <nav class="sheet-links" aria-label="Secciones">
+          <a href="educacion.html">Rapictrl Educación</a>
+          <a href="#precios">Precios</a>
+          <a href="#preguntas">Preguntas frecuentes</a>
+          <a href="https://app.rapictrl.com/login">Iniciar sesión</a>
+        </nav>
+        <div class="sheet-cta">
+          <a class="btn btn-primary btn-lg btn-block" href="https://app.rapictrl.com/register" data-cta="menu">Empieza gratis</a>
+          <a class="btn btn-light btn-lg btn-block" href="https://wa.me/573223267797?text=Hola,%20quisiera%20una%20demo%20de%20Rapictrl" target="_blank" rel="noopener" data-cta="menu-demo"><svg class="i i-wa"><use href="#i-wa"/></svg>Pedir una demo</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="contenido">
 
     <!-- ═══════════════════════════════════════════════════════ HERO -->
-    <section class="hero" id="hero">
-      <div class="hero-glow"></div>
-      <div class="hero-glow-blue"></div>
-
-      <div class="container hero-inner">
-        <div class="hero-copy animate-on-scroll">
-          <div class="badge">✨ 14 días de prueba gratuita — sin tarjeta de crédito</div>
-          <h1>
-            Sabe exactamente en qué punto está tu negocio,
-            <span class="text-gradient">en todo momento</span>
-          </h1>
-          <p class="hero-sub">
-            Finanzas, inventario y reportes en un solo lugar. Toma decisiones con datos reales, no con suposiciones.
-          </p>
-          <div class="hero-actions">
-            <a href="https://wa.me/573223267797?text=Hola,%20quisiera%20una%20demo%20de%20Rapictrl" target="_blank" class="btn-white">
-              Solicitar Demo Gratuita <span class="arrow">→</span>
-            </a>
-            <a href="#pricing" class="btn-glass">Ver Planes y Precios</a>
-          </div>
-          <div class="hero-register">
-            <span class="hero-register-label">o empieza gratis ahora mismo</span>
-            <a href="https://app.rapictrl.com/register" class="btn-google">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              Empieza gratis con Google
-            </a>
-          </div>
-          <div class="trust-badges">
-            <span>✓ Sin tarjeta de crédito</span>
-            <span>✓ Sin contratos</span>
-            <span>✓ Cancela cuando quieras</span>
-          </div>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-inner">
+        <a class="pill-new rv" href="#registro"><span class="pill-tag">Nuevo</span>Anota tus gastos hablándole al celular <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+        <h1 class="hero-title rv">Vende, cobra y controla.<br /><span class="grad">Todo tu negocio en un solo lugar.</span></h1>
+        <p class="hero-sub rv">Ingresos y gastos, facturas, inventario, pedidos, clientes y cartera en una sola app que funciona en el celular y en el computador. Hecha en Colombia para negocios, academias e institutos.</p>
+        <div class="hero-cta rv">
+          <a class="btn btn-primary btn-lg" href="https://app.rapictrl.com/register" data-cta="hero">Empieza gratis <svg class="i i-sm"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-google btn-lg" href="https://app.rapictrl.com/register" data-cta="hero-google"><svg class="i i-g"><use href="#i-google"/></svg>Continuar con Google</a>
         </div>
-
-        <!-- Mockup -->
-        <div class="hero-mockup-wrapper animate-on-scroll delay-2">
-        <div class="hero-mockup-inner">
-          <div class="mockup-browser">
-            <div class="mockup-chrome">
-              <div class="chrome-dots">
-                <div class="dot dot-red"></div>
-                <div class="dot dot-yellow"></div>
-                <div class="dot dot-green"></div>
-              </div>
-              <div class="chrome-url">app.rapictrl.com/inicio</div>
-              <div class="live-badge">En vivo ●</div>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-sidebar">
-                <div class="sidebar-brand">R</div>
-                <div class="sidebar-icon active">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-                </div>
-                <div class="sidebar-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-                </div>
-                <div class="sidebar-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-                </div>
-                <div class="sidebar-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                </div>
-                <div class="sidebar-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                </div>
-              </div>
-              <div class="mockup-main">
-                <div class="dash-topbar">
-                  <span class="dash-title">Dashboard · Mayo 2025</span>
-                </div>
-                <div class="stat-grid">
-                  <div class="stat-card stat-green">
-                    <div class="stat-label">Ingresos Hoy</div>
-                    <div class="stat-value">$2.847.000</div>
-                    <div class="stat-sub">↑ +12% vs ayer</div>
-                  </div>
-                  <div class="stat-card stat-red">
-                    <div class="stat-label">Gastos del Mes</div>
-                    <div class="stat-value">$1.240.000</div>
-                    <div class="stat-sub">Actualizado ahora</div>
-                  </div>
-                  <div class="stat-card stat-blue">
-                    <div class="stat-label">Utilidad Neta</div>
-                    <div class="stat-value">$1.607.000</div>
-                    <div class="stat-sub">Margen 56%</div>
-                  </div>
-                  <div class="stat-card stat-yellow">
-                    <div class="stat-label">Stock crítico</div>
-                    <div class="stat-value">3 productos</div>
-                    <div class="stat-sub">Requieren atención</div>
-                  </div>
-                </div>
-                <div class="chart-box">
-                  <div class="chart-title">Ingresos vs Gastos — últimos 7 días</div>
-                  <div class="chart-bars">
-                    <div class="bar-group"><div class="bar bar-in" style="height:55%"></div><div class="bar bar-ex" style="height:27%"></div></div>
-                    <div class="bar-group"><div class="bar bar-in" style="height:75%"></div><div class="bar bar-ex" style="height:37%"></div></div>
-                    <div class="bar-group"><div class="bar bar-in" style="height:48%"></div><div class="bar bar-ex" style="height:24%"></div></div>
-                    <div class="bar-group"><div class="bar bar-in" style="height:88%"></div><div class="bar bar-ex" style="height:44%"></div></div>
-                    <div class="bar-group"><div class="bar bar-in" style="height:65%"></div><div class="bar bar-ex" style="height:32%"></div></div>
-                    <div class="bar-group"><div class="bar bar-in" style="height:80%"></div><div class="bar bar-ex" style="height:40%"></div></div>
-                    <div class="bar-group"><div class="bar bar-in" style="height:92%"></div><div class="bar bar-ex" style="height:46%"></div></div>
-                  </div>
-                  <div class="chart-days">
-                    <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
-                  </div>
-                </div>
-                <div class="txn-list">
-                  <div class="txn-title">Últimas Transacciones</div>
-                  <div class="txn-row"><span class="txn-desc">Venta #1042</span><span class="txn-amount income">+$340.000</span></div>
-                  <div class="txn-row"><span class="txn-desc">Proveedor ABC</span><span class="txn-amount expense">-$120.000</span></div>
-                  <div class="txn-row"><span class="txn-desc">Venta #1041</span><span class="txn-amount income">+$215.000</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <p class="hero-alt rv">¿Prefieres que te lo mostremos? <a href="https://wa.me/573223267797?text=Hola,%20quisiera%20una%20demo%20de%20Rapictrl" target="_blank" rel="noopener" data-cta="hero-demo">Pide una demo por WhatsApp</a></p>
+        <ul class="trust rv">
+          <li><svg class="i i-sm"><use href="#i-check"/></svg>14 días gratis</li>
+          <li><svg class="i i-sm"><use href="#i-check"/></svg>Sin tarjeta de crédito</li>
+          <li><svg class="i i-sm"><use href="#i-check"/></svg>En el celular y el computador</li>
+          <li><svg class="i i-sm"><use href="#i-check"/></svg>Te atiende una persona real</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════ PAIN POINTS -->
-    <section class="section bg-white" id="pain">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <div class="section-eyebrow">¿Te suena familiar?</div>
-          <h2>Gestionar un negocio sin las herramientas correctas es agotador</h2>
-          <p class="section-sub">La mayoría de dueños de negocio toman decisiones importantes sin datos claros. Eso tiene un costo enorme.</p>
-        </div>
+    <!-- ═══════════════════════════════════════════════════════ DEMO INTERACTIVA
+         Simulación de la app hecha con HTML: el menú cambia de pantalla y el
+         selector la muestra como computador o como celular. Cada pantalla se
+         reacomoda sola por ancho (container queries), así sirve en los dos. -->
+    <section class="demo-sec" id="demo" aria-label="Recorrido por la app">
+      <div class="wrap">
+        <div class="demo rv" id="demo-app" data-view="desk">
+          <div class="demo-bar">
+            <p class="demo-hint"><svg class="i i-sm"><use href="#i-spark"/></svg><span>Toca el menú y recorre cada módulo. <span class="muted">Es una simulación: nada se guarda.</span></span></p>
+            <div class="seg" role="group" aria-label="Ver la app como">
+              <button class="seg-btn is-on" data-view="desk" aria-pressed="true"><svg class="i i-sm"><use href="#i-monitor"/></svg>Computador</button>
+              <button class="seg-btn" data-view="phone" aria-pressed="false"><svg class="i i-sm"><use href="#i-phone"/></svg>Celular</button>
+            </div>
+          </div>
 
-        <div class="pain-grid">
-          <div class="pain-card animate-on-scroll delay-1">
-            <div class="pain-icon pain-orange">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            </div>
-            <h3>¿Cuánto gané hoy?</h3>
-            <p>Terminas el día y no sabes exactamente si fuiste rentable. Revisas cuadernos, Excel o mensajes de WhatsApp buscando los números.</p>
+          <div class="demo-chips" aria-label="Módulos">
+            <button class="chip is-on" data-screen="inicio">Inicio</button>
+            <button class="chip" data-screen="movimientos">Movimientos</button>
+            <button class="chip" data-screen="facturas">Facturas</button>
+            <button class="chip" data-screen="cuentas">Cuentas</button>
+            <button class="chip" data-screen="contactos">Contactos</button>
+            <button class="chip" data-screen="crm">CRM</button>
+            <button class="chip" data-screen="inventario">Inventario</button>
+            <button class="chip" data-screen="pedidos">Pedidos</button>
+            <button class="chip chip-edu" data-screen="estudiantes">Estudiantes</button>
+            <button class="chip chip-edu" data-screen="docentes">Docentes</button>
+            <button class="chip chip-edu" data-screen="programas">Programas</button>
           </div>
-          <div class="pain-card animate-on-scroll delay-2">
-            <div class="pain-icon pain-red">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            </div>
-            <h3>El inventario es un misterio</h3>
-            <p>Pierdes ventas por no saber qué tienes. O descubres que tienes mercancía que lleva meses sin moverse y ya no vale lo mismo.</p>
-          </div>
-          <div class="pain-card animate-on-scroll delay-3">
-            <div class="pain-icon pain-purple">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <h3>Horas perdidas en reportes</h3>
-            <p>Cuando necesitas un resumen financiero para tomar una decisión, tardas horas compilando información que debería estar a un clic.</p>
-          </div>
-        </div>
 
-        <div class="pain-solution animate-on-scroll">
-          <p>Con Rapictrl, tienes la respuesta a todas esas preguntas <strong>en tiempo real, desde cualquier dispositivo.</strong></p>
-        </div>
-      </div>
-    </section>
+          <div class="device">
+            <div class="chrome">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url"><svg class="i i-xs"><use href="#i-lock"/></svg>app.rapictrl.com/<b id="demo-url">inicio</b></span>
+            </div>
+            <div class="phone-status"><span>9:41</span><span class="notch"></span><span>100%</span></div>
 
-    <!-- ═══════════════════════════════════════════════════════ KEY BENEFIT -->
-    <section class="section bg-dark" id="realtime">
-      <div class="container">
-        <div class="feature-row">
-          <div class="feature-copy animate-on-scroll">
-            <div class="badge badge-blue">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              Visibilidad total
-            </div>
-            <h2>Conoce el estado exacto de tu negocio, <span class="text-blue-400">en todo momento</span></h2>
-            <p>Tu dashboard en tiempo real te muestra los números que importan: ingresos del día, rentabilidad del mes, productos por agotarse y cuentas pendientes. Todo en una sola pantalla.</p>
-            <div class="feature-points">
-              <div class="feature-point">
-                <div class="feature-point-icon green">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <div class="app">
+              <aside class="app-nav">
+                <div class="biz">
+                  <img src="logo.png" alt="" width="28" height="28" />
+                  <span><b>Aroma Café &amp; Escuela</b><small>Cambiar de negocio</small></span>
                 </div>
-                <div>
-                  <strong>Ingresos y gastos actualizados al instante</strong>
-                  <p>Cada venta, cada egreso — reflejado de inmediato sin que tengas que hacer nada.</p>
-                </div>
-              </div>
-              <div class="feature-point">
-                <div class="feature-point-icon yellow">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-                </div>
-                <div>
-                  <strong>Alertas antes de que sea un problema</strong>
-                  <p>Stock bajo, pagos próximos a vencer, variaciones inusuales. Te avisamos primero.</p>
-                </div>
-              </div>
-              <div class="feature-point">
-                <div class="feature-point-icon blue">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                </div>
-                <div>
-                  <strong>Reportes listos en un clic</strong>
-                  <p>Cierre del mes, resumen de ventas o informe de inventario en segundos.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="feature-visual animate-on-scroll delay-2">
-            <!-- Dashboard mockup (compact) -->
-            <div class="mockup-browser mockup-sm">
-              <div class="mockup-chrome">
-                <div class="chrome-dots">
-                  <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
-                </div>
-                <div class="chrome-url">app.rapictrl.com/inicio</div>
-                <div class="live-badge">En vivo <span class="live-dot">●</span></div>
-              </div>
-              <div class="mockup-body">
-                <div class="mockup-sidebar sidebar-sm">
-                  <div class="sidebar-brand sm">R</div>
-                  <div class="sidebar-icon active sm"></div>
-                  <div class="sidebar-icon sm"></div>
-                  <div class="sidebar-icon sm"></div>
-                </div>
-                <div class="mockup-main">
-                  <div class="dash-topbar"><span class="dash-title sm">Dashboard · Mayo 2025</span></div>
-                  <div class="stat-grid sm-grid">
-                    <div class="stat-card stat-green sm-card">
-                      <div class="stat-label">Ingresos Hoy</div>
-                      <div class="stat-value sm-val">$2.847.000</div>
-                      <div class="stat-sub">↑ +12%</div>
+                <button class="an-item is-on" data-screen="inicio"><svg class="i"><use href="#i-home"/></svg>Inicio</button>
+                <p class="an-label">Gestión empresarial</p>
+                <button class="an-item" data-screen="movimientos"><svg class="i"><use href="#i-swap"/></svg>Movimientos</button>
+                <button class="an-item" data-screen="facturas"><svg class="i"><use href="#i-file"/></svg>Facturas</button>
+                <button class="an-item" data-screen="cuentas"><svg class="i"><use href="#i-bank"/></svg>Cuentas</button>
+                <button class="an-item" data-screen="contactos"><svg class="i"><use href="#i-contacts"/></svg>Contactos</button>
+                <button class="an-item" data-screen="crm"><svg class="i"><use href="#i-kanban"/></svg>CRM</button>
+                <button class="an-item" data-screen="inventario"><svg class="i"><use href="#i-box"/></svg>Inventario</button>
+                <button class="an-item" data-screen="pedidos"><svg class="i"><use href="#i-cart"/></svg>Pedidos</button>
+                <p class="an-label an-label-edu">Gestión académica</p>
+                <button class="an-item an-edu" data-screen="estudiantes"><svg class="i"><use href="#i-cap"/></svg>Estudiantes</button>
+                <button class="an-item an-edu" data-screen="docentes"><svg class="i"><use href="#i-board"/></svg>Docentes</button>
+                <button class="an-item an-edu" data-screen="programas"><svg class="i"><use href="#i-book"/></svg>Programas</button>
+              </aside>
+
+              <div class="app-main" id="app-main">
+
+                <!-- ── Inicio ── -->
+                <section class="scr is-on" data-screen="inicio" aria-label="Inicio">
+                  <div class="s-head">
+                    <div><p class="s-kicker">Martes 20 de octubre</p><h3 class="s-title">Buenos días, Laura</h3></div>
+                    <span class="s-btn"><svg class="i i-xs"><use href="#i-plus"/></svg>Anotar movimiento</span>
+                  </div>
+                  <div class="kpis">
+                    <div class="kpi"><small>Ingresos del mes</small><b>$18.420.000</b><span class="d up">▲ 12% frente a septiembre</span></div>
+                    <div class="kpi"><small>Gastos del mes</small><b>$9.180.000</b><span class="d">32 movimientos</span></div>
+                    <div class="kpi kpi-blue"><small>Balance</small><b>$9.240.000</b><span class="d">Saldo acumulado $13.770.000</span></div>
+                  </div>
+                  <p class="s-label">Tus módulos</p>
+                  <div class="tiles">
+                    <button class="tile" data-goto="movimientos"><span class="ico ico-blue"><svg class="i"><use href="#i-swap"/></svg></span><b>Movimientos</b><small>Ingresos y gastos</small></button>
+                    <button class="tile" data-goto="facturas"><span class="ico ico-indigo"><svg class="i"><use href="#i-file"/></svg></span><b>Facturas</b><small>Facturas y cotizaciones</small></button>
+                    <button class="tile" data-goto="cuentas"><span class="ico ico-rose"><svg class="i"><use href="#i-bank"/></svg></span><b>Cuentas</b><small>Por pagar y por cobrar</small></button>
+                    <button class="tile" data-goto="contactos"><span class="ico ico-orange"><svg class="i"><use href="#i-contacts"/></svg></span><b>Contactos</b><small>Clientes y proveedores</small></button>
+                    <button class="tile" data-goto="crm"><span class="ico ico-amber"><svg class="i"><use href="#i-kanban"/></svg></span><b>CRM</b><small>Prospectos y seguimiento</small></button>
+                    <button class="tile" data-goto="inventario"><span class="ico ico-cyan"><svg class="i"><use href="#i-box"/></svg></span><b>Inventario</b><small>Productos y existencias</small></button>
+                    <button class="tile" data-goto="pedidos"><span class="ico ico-green"><svg class="i"><use href="#i-cart"/></svg></span><b>Pedidos</b><small>Ventas y pedidos</small></button>
+                    <button class="tile" data-goto="estudiantes"><span class="ico ico-violet"><svg class="i"><use href="#i-cap"/></svg></span><b>Estudiantes</b><small>Matrícula y fichas</small></button>
+                  </div>
+                </section>
+
+                <!-- ── Movimientos ── -->
+                <section class="scr" data-screen="movimientos" aria-label="Movimientos">
+                  <div class="s-head">
+                    <div><h3 class="s-title">Movimientos</h3><p class="s-sub">‹ Octubre 2026 ›</p></div>
+                    <div class="s-seg"><span class="is-on">Movimientos</span><span>Estadísticas</span></div>
+                  </div>
+                  <div class="split">
+                    <div class="mv-bal">
+                      <small>Balance del mes</small>
+                      <b class="mv-big"><i class="dot dot-pos"></i>$9.240.000</b>
+                      <div class="mv-tot">
+                        <span><small>Gastos</small>−$9.180.000</span>
+                        <span><small>Ingresos</small>+$18.420.000</span>
+                        <span><small>Saldo acumulado</small>$13.770.000</span>
+                      </div>
                     </div>
-                    <div class="stat-card stat-blue sm-card">
-                      <div class="stat-label">Utilidad</div>
-                      <div class="stat-value sm-val">$1.607.000</div>
-                      <div class="stat-sub">Margen 56%</div>
-                    </div>
-                    <div class="stat-card stat-red sm-card">
-                      <div class="stat-label">Gastos</div>
-                      <div class="stat-value sm-val">$1.240.000</div>
-                      <div class="stat-sub">Este mes</div>
-                    </div>
-                    <div class="stat-card stat-yellow sm-card">
-                      <div class="stat-label">Alertas</div>
-                      <div class="stat-value sm-val">3</div>
-                      <div class="stat-sub">Stock bajo</div>
+                    <div class="mv-quick">
+                      <small>Anota un movimiento</small>
+                      <div class="mv-input"><span>almuerzo 25000</span><span class="mic"><svg class="i i-xs"><use href="#i-mic"/></svg></span></div>
+                      <p class="mv-parse"><span class="tag t-gray">Gasto</span><span class="tag t-amber">● Comida</span><b>$25.000</b></p>
                     </div>
                   </div>
-                  <div class="chart-box sm-chart">
-                    <div class="chart-title">Últimos 7 días</div>
-                    <div class="chart-bars">
-                      <div class="bar-group"><div class="bar bar-in" style="height:55%"></div><div class="bar bar-ex" style="height:27%"></div></div>
-                      <div class="bar-group"><div class="bar bar-in" style="height:75%"></div><div class="bar bar-ex" style="height:37%"></div></div>
-                      <div class="bar-group"><div class="bar bar-in" style="height:48%"></div><div class="bar bar-ex" style="height:24%"></div></div>
-                      <div class="bar-group"><div class="bar bar-in" style="height:88%"></div><div class="bar bar-ex" style="height:44%"></div></div>
-                      <div class="bar-group"><div class="bar bar-in" style="height:65%"></div><div class="bar bar-ex" style="height:32%"></div></div>
-                      <div class="bar-group"><div class="bar bar-in" style="height:80%"></div><div class="bar bar-ex" style="height:40%"></div></div>
-                      <div class="bar-group"><div class="bar bar-in" style="height:92%"></div><div class="bar bar-ex" style="height:46%"></div></div>
+                  <p class="s-label">¿En qué se fue la plata?</p>
+                  <div class="bars">
+                    <div class="bar" style="--h:100%;--c:#f97316"><b>3,6M</b><i></i><small>Nómina</small></div>
+                    <div class="bar" style="--h:78%;--c:#6366f1"><b>2,8M</b><i></i><small>Arriendo</small></div>
+                    <div class="bar" style="--h:39%;--c:#0891b2"><b>1,4M</b><i></i><small>Insumos</small></div>
+                    <div class="bar" style="--h:18%;--c:#f59e0b"><b>640K</b><i></i><small>Comida</small></div>
+                    <div class="bar" style="--h:12%;--c:#16a34a"><b>410K</b><i></i><small>Transporte</small></div>
+                    <div class="bar" style="--h:9%;--c:#ec4899"><b>330K</b><i></i><small>Servicios</small></div>
+                  </div>
+                  <div class="mv-list">
+                    <p class="mv-day">Hoy <span>+$315.000</span></p>
+                    <div class="mv-row"><span class="et" style="--c:#16a34a">V</span><span class="mv-d"><b>Venta mostrador</b><small>Efectivo · Ventas</small></span><span class="amt in">+$340.000</span></div>
+                    <div class="mv-row"><span class="et" style="--c:#f59e0b">C</span><span class="mv-d"><b>Almuerzo</b><small>Caja · Comida</small></span><span class="amt">−$25.000</span></div>
+                    <p class="mv-day">Ayer <span>−$1.610.000</span></p>
+                    <div class="mv-row"><span class="et" style="--c:#6366f1">A</span><span class="mv-d"><b>Arriendo del local</b><small>Banco · Arriendo · <svg class="i i-xs"><use href="#i-clip"/></svg> recibo.pdf</small></span><span class="amt">−$2.800.000</span></div>
+                    <div class="mv-row"><span class="et" style="--c:#16a34a">V</span><span class="mv-d"><b>Pago FAC-2026-0142</b><small>Banco · Ventas</small></span><span class="amt in">+$1.190.000</span></div>
+                  </div>
+                </section>
+
+                <!-- ── Facturas ── -->
+                <section class="scr" data-screen="facturas" aria-label="Facturas">
+                  <div class="s-head">
+                    <div><h3 class="s-title">Facturas</h3><p class="s-sub">Facturas y cotizaciones · Octubre 2026</p></div>
+                    <div class="s-actions"><div class="s-seg"><span class="is-on">Facturas</span><span>Cotizaciones</span></div><span class="s-btn"><svg class="i i-xs"><use href="#i-plus"/></svg>Nueva</span></div>
+                  </div>
+                  <div class="kpis">
+                    <div class="kpi"><small>Facturado en octubre</small><b>$24.600.000</b><span class="d">18 facturas</span></div>
+                    <div class="kpi kpi-green"><small>Pagadas</small><b>15</b><span class="d">$21.120.000</span></div>
+                    <div class="kpi kpi-orange"><small>Por cobrar</small><b>$3.480.000</b><span class="d">3 facturas</span></div>
+                  </div>
+                  <div class="split split-doc">
+                    <div class="tbl">
+                      <div class="tr th"><span>Número</span><span>Cliente</span><span class="hide-n">Fecha</span><span class="r">Total</span><span>Estado</span></div>
+                      <div class="tr"><span class="mono">FAC-2026-0142</span><span>Hotel Los Cerezos</span><span class="hide-n">18 oct</span><span class="r">$1.190.000</span><span><i class="tag t-green">Pagada</i></span></div>
+                      <div class="tr"><span class="mono">FAC-2026-0141</span><span>Juan Pérez</span><span class="hide-n">17 oct</span><span class="r">$450.000</span><span><i class="tag t-blue">Emitida</i></span></div>
+                      <div class="tr"><span class="mono">COT-2026-0087</span><span>Restaurante La Fonda</span><span class="hide-n">15 oct</span><span class="r">$3.200.000</span><span><i class="tag t-violet">Aceptada</i></span></div>
+                      <div class="tr"><span class="mono">COT-2026-0086</span><span>Oficinas Nova S.A.S.</span><span class="hide-n">14 oct</span><span class="r">$860.000</span><span><i class="tag t-orange">Enviada</i></span></div>
+                      <div class="tr"><span class="mono">FAC-2026-0139</span><span>Panadería San José</span><span class="hide-n">12 oct</span><span class="r">$780.000</span><span><i class="tag t-green">Pagada</i></span></div>
+                    </div>
+                    <div class="doc">
+                      <div class="doc-top"><img src="logo.png" alt="" width="26" height="26" /><span><b>Aroma Café &amp; Escuela</b><small>NIT 900.123.456-7</small></span><i class="doc-flag">FACTURA</i></div>
+                      <p class="doc-n">FAC-2026-0142 · 18 oct 2026</p>
+                      <p class="doc-to"><small>Para</small>Hotel Los Cerezos</p>
+                      <div class="doc-line"><span>Café de origen 500 g × 20</span><b>$640.000</b></div>
+                      <div class="doc-line"><span>Vasos 12 oz (paq. ×50) × 10</span><b>$360.000</b></div>
+                      <div class="doc-line doc-sm"><span>IVA 19%</span><b>$190.000</b></div>
+                      <div class="doc-total"><span>Total</span><b>$1.190.000</b></div>
+                      <span class="doc-dl"><svg class="i i-xs"><use href="#i-download"/></svg>Descargar PDF</span>
                     </div>
                   </div>
-                </div>
+                </section>
+
+                <!-- ── Cuentas ── -->
+                <section class="scr" data-screen="cuentas" aria-label="Cuentas">
+                  <div class="s-head">
+                    <div><h3 class="s-title">Cuentas</h3><div class="s-tabs"><span class="is-on">Por pagar</span><span>Por cobrar</span></div></div>
+                    <span class="s-btn"><svg class="i i-xs"><use href="#i-plus"/></svg>Nueva cuenta</span>
+                  </div>
+                  <div class="kpis">
+                    <div class="kpi kpi-red"><small>Total por pagar</small><b>$3.950.000</b><span class="d">3 obligaciones</span></div>
+                    <div class="kpi kpi-green"><small>Abonado este mes</small><b>$1.570.000</b><span class="d">5 abonos</span></div>
+                    <div class="kpi"><small>Próxima cuota</small><b>25 oct</b><span class="d">$420.000 · Finca El Mirador</span></div>
+                  </div>
+                  <div class="debts">
+                    <div class="debt">
+                      <span class="av" style="--c:#b45309">FM</span>
+                      <span class="debt-d"><b>Finca El Mirador</b><small>Café verde · 6 cuotas de $420.000</small></span>
+                      <span class="debt-p"><small>3 de 6 cuotas</small><i class="prog"><i style="width:50%"></i></i></span>
+                      <span class="debt-s"><small>Saldo</small><b>$1.260.000</b></span>
+                      <span class="s-btn s-btn-ghost hide-n">Abonar</span>
+                    </div>
+                    <div class="debt">
+                      <span class="av" style="--c:#0f766e">ED</span>
+                      <span class="debt-d"><b>Empaques del Valle</b><small>Vasos y tapas · 3 cuotas de $310.000</small></span>
+                      <span class="debt-p"><small>1 de 3 cuotas</small><i class="prog"><i style="width:33%"></i></i></span>
+                      <span class="debt-s"><small>Saldo</small><b>$620.000</b></span>
+                      <span class="s-btn s-btn-ghost hide-n">Abonar</span>
+                    </div>
+                    <div class="debt">
+                      <span class="av" style="--c:#4338ca">ML</span>
+                      <span class="debt-d"><b>Muebles para el local</b><small>12 cuotas de $230.000</small></span>
+                      <span class="debt-p"><small>3 de 12 cuotas</small><i class="prog"><i style="width:25%"></i></i></span>
+                      <span class="debt-s"><small>Saldo</small><b>$2.070.000</b></span>
+                      <span class="s-btn s-btn-ghost hide-n">Abonar</span>
+                    </div>
+                  </div>
+                  <div class="note note-teal"><svg class="i i-sm"><use href="#i-coin"/></svg><span><b>Por cobrar:</b> le prestaste $600.000 a Andrés Ríos en 3 cuotas. El egreso quedó registrado solo en Movimientos.</span></div>
+                </section>
+
+                <!-- ── Contactos ── -->
+                <section class="scr" data-screen="contactos" aria-label="Contactos">
+                  <div class="s-head">
+                    <div><h3 class="s-title">Contactos</h3><p class="s-sub">128 contactos</p></div>
+                    <div class="s-actions"><span class="s-search"><svg class="i i-xs"><use href="#i-search"/></svg>Buscar</span><span class="s-btn"><svg class="i i-xs"><use href="#i-plus"/></svg>Nuevo</span></div>
+                  </div>
+                  <div class="pills"><span class="is-on">Todos 128</span><span>Clientes 96</span><span>Proveedores 21</span><span>Colaboradores 11</span></div>
+                  <div class="people">
+                    <div class="person"><span class="av" style="--c:#2563eb">HC</span><span class="person-d"><b>Hotel Los Cerezos</b><small>Cliente desde marzo de 2025</small></span><i class="tag t-blue">Cliente</i><span class="hide-n muted">+57 310 ••• 42 18</span><span class="wa-dot"><svg class="i i-xs i-wa"><use href="#i-wa"/></svg></span></div>
+                    <div class="person"><span class="av" style="--c:#b45309">FM</span><span class="person-d"><b>Finca El Mirador</b><small>Café verde de origen</small></span><i class="tag t-orange">Proveedor</i><span class="hide-n muted">+57 315 ••• 07 63</span><span class="wa-dot"><svg class="i i-xs i-wa"><use href="#i-wa"/></svg></span></div>
+                    <div class="person"><span class="av" style="--c:#0891b2">JP</span><span class="person-d"><b>Juan Pérez</b><small>3 compras este mes</small></span><i class="tag t-blue">Cliente</i><span class="hide-n muted">+57 300 ••• 15 90</span><span class="wa-dot"><svg class="i i-xs i-wa"><use href="#i-wa"/></svg></span></div>
+                    <div class="person"><span class="av" style="--c:#7c3aed">ML</span><span class="person-d"><b>María Fernanda López</b><small>Barista · turnos de fin de semana</small></span><i class="tag t-violet">Colaboradora</i><span class="hide-n muted">+57 312 ••• 88 41</span><span class="wa-dot"><svg class="i i-xs i-wa"><use href="#i-wa"/></svg></span></div>
+                    <div class="person"><span class="av" style="--c:#0f766e">LP</span><span class="person-d"><b>Lácteos La Pradera</b><small>Leche y derivados</small></span><i class="tag t-orange">Proveedor</i><span class="hide-n muted">+57 318 ••• 23 05</span><span class="wa-dot"><svg class="i i-xs i-wa"><use href="#i-wa"/></svg></span></div>
+                  </div>
+                </section>
+
+                <!-- ── CRM ── -->
+                <section class="scr" data-screen="crm" aria-label="CRM">
+                  <div class="s-head">
+                    <div><h3 class="s-title">CRM</h3><p class="s-sub">Prospectos · $8.220.000 en juego</p></div>
+                    <div class="s-actions"><div class="s-seg"><span>Lista</span><span class="is-on">Tablero</span></div><span class="s-btn"><svg class="i i-xs"><use href="#i-plus"/></svg>Prospecto</span></div>
+                  </div>
+                  <div class="kb">
+                    <div class="kb-col"><p class="kb-h"><i style="--c:#64748b"></i>Nuevo <span>3</span></p>
+                      <div class="kb-card"><b>Sofía Martínez</b><small>Curso de barismo</small><span>$650.000 · hace 2 h</span></div>
+                      <div class="kb-card"><b>Cafetería Central</b><small>Café por mayor</small><span>$1.800.000 · hace 5 h</span></div>
+                      <div class="kb-card"><b>Daniel Torres</b><small>Taller de latte art</small><span>$360.000 · ayer</span></div>
+                    </div>
+                    <div class="kb-col"><p class="kb-h"><i style="--c:#2563eb"></i>Contactado <span>2</span></p>
+                      <div class="kb-card"><b>Oficinas Nova S.A.S.</b><small>Café para la oficina</small><span>$1.200.000 · ayer</span></div>
+                      <div class="kb-card"><b>Luisa Fernanda Gil</b><small>Curso de barismo</small><span>$650.000 · hace 2 días</span></div>
+                    </div>
+                    <div class="kb-col"><p class="kb-h"><i style="--c:#f59e0b"></i>Propuesta <span>2</span></p>
+                      <div class="kb-card kb-drag"><b>Restaurante La Fonda</b><small>Cotización COT-2026-0087</small><span>$3.200.000 · hoy</span></div>
+                      <div class="kb-card"><b>Isabela Cruz</b><small>Taller de latte art</small><span>$360.000 · hace 3 días</span></div>
+                    </div>
+                    <div class="kb-col kb-won"><p class="kb-h"><i style="--c:#16a34a"></i>Ganado <span>1</span></p>
+                      <div class="kb-card"><b>Juan Pérez</b><small>Kit de barismo</small><span class="won"><svg class="i i-xs"><use href="#i-check"/></svg>Ahora es cliente</span></div>
+                    </div>
+                  </div>
+                  <p class="s-foot">Arrastra una tarjeta para cambiarla de etapa. Al ganarla, el prospecto pasa a ser cliente.</p>
+                </section>
+
+                <!-- ── Inventario ── -->
+                <section class="scr" data-screen="inventario" aria-label="Inventario">
+                  <div class="s-head">
+                    <div><h3 class="s-title">Inventario</h3><p class="s-sub">46 productos y servicios</p></div>
+                    <span class="s-btn"><svg class="i i-xs"><use href="#i-plus"/></svg>Producto</span>
+                  </div>
+                  <div class="inv-hero">
+                    <div><small>Valor del inventario</small><b>$12.840.000</b></div>
+                    <div class="inv-flags"><i class="tag t-orange">1 con stock bajo</i><i class="tag t-red">1 agotado</i></div>
+                  </div>
+                  <div class="tbl tbl-inv">
+                    <div class="tr th"><span>Producto</span><span class="hide-n">Categoría</span><span>Stock</span><span class="r">Precio</span><span class="r hide-n">Margen</span></div>
+                    <div class="tr"><span><b>Café de origen 500 g</b></span><span class="hide-n"><i class="tag t-amber">Café</i></span><span>38</span><span class="r">$32.000</span><span class="r hide-n">42%</span></div>
+                    <div class="tr"><span><b>Café molido 250 g</b></span><span class="hide-n"><i class="tag t-amber">Café</i></span><span>24</span><span class="r">$18.000</span><span class="r hide-n">38%</span></div>
+                    <div class="tr"><span><b>Leche entera 1 L</b></span><span class="hide-n"><i class="tag t-cyan">Insumos</i></span><span class="warn">4 <i class="tag t-orange">Bajo</i></span><span class="r">$4.800</span><span class="r hide-n">—</span></div>
+                    <div class="tr"><span><b>Vasos 12 oz (paq. ×50)</b></span><span class="hide-n"><i class="tag t-gray">Empaques</i></span><span class="danger">0 <i class="tag t-red">Agotado</i></span><span class="r">$36.000</span><span class="r hide-n">30%</span></div>
+                    <div class="tr"><span><b>Kit de barismo</b></span><span class="hide-n"><i class="tag t-violet">Equipos</i></span><span>6</span><span class="r">$190.000</span><span class="r hide-n">35%</span></div>
+                  </div>
+                </section>
+
+                <!-- ── Pedidos ── -->
+                <section class="scr" data-screen="pedidos" aria-label="Pedidos">
+                  <div class="s-head">
+                    <div><h3 class="s-title">Pedidos</h3><div class="pills pills-inline"><span class="is-on">Pendientes 3</span><span>Completados 21</span></div></div>
+                    <div class="cash"><small>Caja actual</small><b>$1.240.000</b></div>
+                  </div>
+                  <div class="orders">
+                    <div class="order"><span class="order-n">#1043</span><span class="order-d"><b>Mesa 4</b><small>2× Capuchino · 1× Torta de zanahoria</small></span><b class="r">$26.000</b><span class="ok-btn"><svg class="i i-sm"><use href="#i-check"/></svg></span></div>
+                    <div class="order order-open"><span class="order-n">#1042</span><span class="order-d"><b>Domicilio · Juan Pérez</b><small>1× Café de origen 500 g</small></span><b class="r">$32.000</b><span class="ok-btn is-on"><svg class="i i-sm"><use href="#i-check"/></svg></span>
+                      <div class="pay">
+                        <p>¿Dónde entró el pago?</p>
+                        <div class="pay-chips"><span class="is-on">Efectivo</span><span>Transferencia</span><span>Datáfono</span></div>
+                        <small>Al completarlo se descuenta del inventario y queda el ingreso en Movimientos.</small>
+                      </div>
+                    </div>
+                    <div class="order"><span class="order-n">#1041</span><span class="order-d"><b>Para llevar</b><small>3× Tinto</small></span><b class="r">$9.000</b><span class="ok-btn"><svg class="i i-sm"><use href="#i-check"/></svg></span></div>
+                  </div>
+                </section>
+
+                <!-- ── Estudiantes ── -->
+                <section class="scr" data-screen="estudiantes" aria-label="Estudiantes">
+                  <div class="s-head">
+                    <div><h3 class="s-title">Estudiantes</h3><p class="s-sub">86 activos · 4 programas</p></div>
+                    <span class="s-btn s-btn-violet"><svg class="i i-xs"><use href="#i-plus"/></svg>Matricular</span>
+                  </div>
+                  <div class="split split-ficha">
+                    <div class="people">
+                      <div class="person is-sel"><span class="av" style="--c:#7c3aed">VO</span><span class="person-d"><b>Valentina Osorio</b><small>Barismo profesional</small></span><i class="tag t-green">Al día</i></div>
+                      <div class="person"><span class="av" style="--c:#db2777">SH</span><span class="person-d"><b>Santiago Herrera</b><small>Latte art</small></span><i class="tag t-orange">Debe $120.000</i></div>
+                      <div class="person"><span class="av" style="--c:#0891b2">CR</span><span class="person-d"><b>Camila Rojas</b><small>Administración de cafeterías</small></span><i class="tag t-green">Al día</i></div>
+                      <div class="person"><span class="av" style="--c:#4338ca">MG</span><span class="person-d"><b>Mateo Gómez</b><small>Barismo profesional</small></span><i class="tag t-violet">Graduado</i></div>
+                    </div>
+                    <div class="ficha">
+                      <div class="ficha-top"><span class="av av-lg" style="--c:#7c3aed">VO</span><span><b>Valentina Osorio</b><small>Barismo profesional</small></span></div>
+                      <div class="ficha-row"><small>Avance</small><span>18 de 24 clases</span></div>
+                      <i class="prog prog-violet"><i style="width:75%"></i></i>
+                      <div class="ficha-row"><small>Notas</small><span>Corte 1 <b>4,5</b> · Corte 2 <b>4,2</b></span></div>
+                      <div class="ficha-row"><small>Certificados</small><span class="file"><svg class="i i-xs"><use href="#i-award"/></svg>Certificado.pdf</span></div>
+                      <div class="ficha-row"><small>Paz y salvo</small><span><i class="tag t-green">Académico ✓</i> <i class="tag t-green">Financiero ✓</i></span></div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- ── Docentes ── -->
+                <section class="scr" data-screen="docentes" aria-label="Docentes">
+                  <div class="s-head">
+                    <div><h3 class="s-title">Docentes</h3><p class="s-sub">3 docentes</p></div>
+                    <span class="s-btn s-btn-violet"><svg class="i i-xs"><use href="#i-plus"/></svg>Docente</span>
+                  </div>
+                  <div class="teachers">
+                    <div class="teacher"><span class="av av-lg" style="--c:#db2777">CM</span><b>Carolina Méndez</b><i class="tag t-green">Acceso activo</i><p class="s-label">Programas</p><span class="chips-sm"><i>Barismo profesional</i><i>Latte art</i></span></div>
+                    <div class="teacher"><span class="av av-lg" style="--c:#0891b2">JS</span><b>Jorge Salazar</b><i class="tag t-green">Acceso activo</i><p class="s-label">Programas</p><span class="chips-sm"><i>Administración de cafeterías</i></span></div>
+                    <div class="teacher"><span class="av av-lg" style="--c:#b45309">PA</span><b>Paula Andrade</b><i class="tag t-gray">Sin acceso</i><p class="s-label">Programas</p><span class="chips-sm"><i>Latte art</i></span></div>
+                  </div>
+                  <div class="note note-violet"><svg class="i i-sm"><use href="#i-lock"/></svg><span>Cada docente entra con su propio usuario y ve solo sus programas: clases, foro, evaluaciones y notas.</span></div>
+                </section>
+
+                <!-- ── Programas ── -->
+                <section class="scr" data-screen="programas" aria-label="Programas">
+                  <div class="s-head">
+                    <div><p class="s-kicker">Programas ›</p><h3 class="s-title">Barismo profesional</h3><p class="s-sub">3 materias · 42 estudiantes · 2 docentes</p></div>
+                  </div>
+                  <div class="s-tabs s-tabs-violet"><span class="is-on">Materias</span><span>Estudiantes</span><span>Docentes</span><span>Foro</span></div>
+                  <div class="split split-prog">
+                    <div class="subjects">
+                      <div class="subject"><span class="sub-n">1</span><span class="sub-d"><b>Fundamentos del café</b><small>4 temas · 12 clases · evaluación final</small><i class="prog prog-violet"><i style="width:100%"></i></i></span></div>
+                      <div class="subject"><span class="sub-n">2</span><span class="sub-d"><b>Métodos de extracción</b><small>3 temas · 8 clases</small><i class="prog prog-violet"><i style="width:60%"></i></i></span></div>
+                      <div class="subject"><span class="sub-n">3</span><span class="sub-d"><b>Servicio y atención</b><small>2 temas · 4 clases</small><i class="prog prog-violet"><i style="width:0%"></i></i></span></div>
+                    </div>
+                    <div class="periods">
+                      <p class="s-label">Notas por periodos</p>
+                      <div class="period"><span>Corte 1</span><b>30%</b></div>
+                      <div class="period"><span>Corte 2</span><b>30%</b></div>
+                      <div class="period"><span>Final</span><b>40%</b></div>
+                      <p class="periods-foot">Clases con video y presentaciones, foro por materia y evaluaciones en línea.</p>
+                    </div>
+                  </div>
+                </section>
+
+              </div>
+
+              <nav class="phone-tabs" aria-label="Accesos rápidos">
+                <button data-screen="inicio" class="is-on"><svg class="i"><use href="#i-home"/></svg>Inicio</button>
+                <button data-screen="movimientos"><svg class="i"><use href="#i-swap"/></svg>Movimientos</button>
+                <button data-screen="pedidos"><svg class="i"><use href="#i-cart"/></svg>Pedidos</button>
+                <button data-screen="inventario"><svg class="i"><use href="#i-box"/></svg>Inventario</button>
+                <button data-screen="crm"><svg class="i"><use href="#i-kanban"/></svg>CRM</button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ MOVIMIENTOS (función estrella) -->
+    <section class="sec" id="registro">
+      <div class="wrap sp">
+        <div class="sp-copy rv">
+          <p class="eyebrow eyebrow-coral">Movimientos</p>
+          <h2 class="title">Anota un gasto en segundos, antes de que se te olvide.</h2>
+          <p class="lead">Escribe «almuerzo 25000» o díctalo. Rapictrl separa la descripción del valor, te sugiere la etiqueta y lo deja guardado. Sin formularios eternos.</p>
+          <ul class="feat">
+            <li><span class="ico ico-coral"><svg class="i"><use href="#i-mic"/></svg></span><div><b>Escribe o habla como hablas</b><p>«20 lucas», «150 mil» o «1,2 palos»: lo entiende.</p></div></li>
+            <li><span class="ico ico-amber"><svg class="i"><use href="#i-tag"/></svg></span><div><b>Etiquetas de color</b><p>Mira de un vistazo en qué se va la plata cada mes.</p></div></li>
+            <li><span class="ico ico-blue"><svg class="i"><use href="#i-clip"/></svg></span><div><b>El soporte, adjunto</b><p>Guarda la factura o el recibo en PDF o foto junto al movimiento.</p></div></li>
+            <li><span class="ico ico-green"><svg class="i"><use href="#i-trend"/></svg></span><div><b>Saldo que se arrastra</b><p>Lo que sobró los meses anteriores se suma solo al saldo.</p></div></li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://app.rapictrl.com/register" data-cta="registro">Empieza gratis</a>
+            <a class="link-arrow" href="#demo" data-goto="movimientos">Verlo en la demo <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+
+        <div class="sp-visual rv">
+          <div class="sp-blob" aria-hidden="true"></div>
+          <div class="phone" id="sp-phone" aria-hidden="true">
+            <div class="ph-screen">
+              <div class="ph-status"><span>9:41</span><span class="ph-notch"></span><span>100%</span></div>
+              <p class="ph-period">‹ <b>Octubre</b> ›</p>
+              <div class="ph-bal"><small>Saldo acumulado 13,77M</small><b><i class="dot dot-pos"></i>9.240.000</b></div>
+              <div class="ph-tot"><span class="is-on"><small>Gastos</small>9,18M</span><span><small>Ingresos</small>18,4M</span></div>
+              <div class="ph-bars">
+                <span style="--h:100%;--c:#f97316"><i></i><small>Nómina</small></span>
+                <span style="--h:78%;--c:#6366f1"><i></i><small>Arriendo</small></span>
+                <span style="--h:40%;--c:#0891b2"><i></i><small>Insumos</small></span>
+                <span style="--h:20%;--c:#f59e0b"><i></i><small>Comida</small></span>
+                <span style="--h:13%;--c:#16a34a"><i></i><small>Transp.</small></span>
+              </div>
+              <div class="ph-list" id="sp-list">
+                <p class="ph-day">Hoy</p>
+                <div class="ph-row"><span class="et" style="--c:#16a34a">V</span><span><b>Venta mostrador</b><small>Ventas</small></span><i class="in">+340.000</i></div>
+                <div class="ph-row"><span class="et" style="--c:#16a34a">T</span><span><b>Taxi</b><small>Transporte</small></span><i>−12.000</i></div>
+                <div class="ph-row"><span class="et" style="--c:#ec4899">L</span><span><b>Luz del local</b><small>Servicios</small></span><i>−186.000</i></div>
+              </div>
+              <div class="ph-sheet" id="sp-sheet">
+                <small id="sp-tipo">Gasto</small>
+                <b id="sp-amt">$25.000</b>
+                <p><span id="sp-desc">Almuerzo</span><i class="tag" id="sp-tag">● Comida</i></p>
+                <span class="ph-save">Guardar</span>
+              </div>
+              <div class="ph-input">
+                <span class="ph-field"><span id="sp-typed"></span><i class="caret"></i><span class="ph-ph" id="sp-ph">Ej: almuerzo 25.000</span></span>
+                <span class="ph-mic"><svg class="i i-sm"><use href="#i-mic"/></svg></span>
+              </div>
+            </div>
+          </div>
+          <div class="float-card fc-1" aria-hidden="true"><small>Lo entiende así</small><b>«20 lucas» = $20.000</b></div>
+          <div class="float-card fc-2" aria-hidden="true"><svg class="i i-sm"><use href="#i-phone"/></svg><span>Se instala como app<small>en Android y iPhone</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ VENTAS Y CARTERA (acordeón) -->
+    <section class="sec sec-soft" id="ventas">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Ventas y cartera</p>
+          <h2 class="title">De la cotización al pago, sin perder el hilo.</h2>
+          <p class="lead">Cotiza, factura, toma pedidos y lleva lo que te deben y lo que debes. Todo queda conectado con tus movimientos.</p>
+        </div>
+
+        <div class="acc-wrap">
+          <div class="acc rv" id="acc">
+            <div class="acc-item is-open" data-vis="v-fact">
+              <button class="acc-btn" aria-expanded="true"><span class="ico ico-indigo"><svg class="i"><use href="#i-file"/></svg></span><span class="acc-t">Facturas y cotizaciones</span><svg class="i i-sm acc-chev"><use href="#i-chev"/></svg></button>
+              <div class="acc-panel"><div>
+                <p>Haz la cotización, conviértela en factura con un clic y descárgala en PDF con tu logo y tu NIT.</p>
+                <ul class="checks">
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>Numeración automática de facturas y cotizaciones</li>
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>Ítems del inventario o escritos a mano</li>
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>Estados claros: enviada, aceptada, pagada</li>
+                </ul>
+              </div></div>
+            </div>
+            <div class="acc-item" data-vis="v-cuentas">
+              <button class="acc-btn" aria-expanded="false"><span class="ico ico-rose"><svg class="i"><use href="#i-bank"/></svg></span><span class="acc-t">Cuentas por cobrar y por pagar</span><svg class="i i-sm acc-chev"><use href="#i-chev"/></svg></button>
+              <div class="acc-panel"><div>
+                <p>Registra lo que debes y lo que te deben en cuotas, abona cuando pagues y mira el saldo siempre al día.</p>
+                <ul class="checks">
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>Cuotas y abonos, con el historial de cada uno</li>
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>Si le prestas a un contacto, el egreso se registra solo</li>
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>Por pagar y por cobrar en una sola vista</li>
+                </ul>
+              </div></div>
+            </div>
+            <div class="acc-item" data-vis="v-ped">
+              <button class="acc-btn" aria-expanded="false"><span class="ico ico-green"><svg class="i"><use href="#i-cart"/></svg></span><span class="acc-t">Pedidos que mueven el inventario</span><svg class="i i-sm acc-chev"><use href="#i-chev"/></svg></button>
+              <div class="acc-panel"><div>
+                <p>Toma el pedido y márcalo como entregado: el stock se descuenta y el ingreso queda en tus movimientos.</p>
+                <ul class="checks">
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>Eliges dónde entró el pago: efectivo, banco o datáfono</li>
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>Cierre de caja con el historial del día</li>
+                  <li><svg class="i i-sm"><use href="#i-check"/></svg>El stock bajo se ve antes de que se acabe</li>
+                </ul>
+              </div></div>
+            </div>
+            <a class="btn btn-dark" href="https://app.rapictrl.com/register" data-cta="ventas">Empieza gratis</a>
+          </div>
+
+          <div class="acc-visual rv" aria-hidden="true">
+            <!-- Cotización → factura -->
+            <div class="vis is-on" id="v-fact">
+              <div class="paper paper-back">
+                <div class="paper-top"><b>COTIZACIÓN</b><i class="tag t-violet">Aceptada</i></div>
+                <p class="paper-n">COT-2026-0087 · Restaurante La Fonda</p>
+                <div class="paper-lines"><i></i><i></i><i></i></div>
+                <p class="paper-total">$3.200.000</p>
+              </div>
+              <div class="convert"><svg class="i i-sm"><use href="#i-arrow"/></svg>Convertir en factura</div>
+              <div class="paper paper-front">
+                <div class="paper-top"><span class="paper-brand"><img src="logo.png" alt="" width="24" height="24" /><span><b>Aroma Café &amp; Escuela</b><small>NIT 900.123.456-7</small></span></span><i class="doc-flag">FACTURA</i></div>
+                <p class="paper-n">FAC-2026-0143 · 20 oct 2026 · Restaurante La Fonda</p>
+                <div class="doc-line"><span>Café de origen 500 g × 60</span><b>$1.920.000</b></div>
+                <div class="doc-line"><span>Kit de barismo × 4</span><b>$760.000</b></div>
+                <div class="doc-line doc-sm"><span>IVA 19%</span><b>$520.000</b></div>
+                <div class="doc-total"><span>Total</span><b>$3.200.000</b></div>
+                <span class="doc-dl"><svg class="i i-xs"><use href="#i-download"/></svg>Descargar PDF</span>
+              </div>
+            </div>
+            <!-- Cuotas y abonos -->
+            <div class="vis" id="v-cuentas">
+              <div class="vcard">
+                <div class="s-tabs"><span class="is-on">Por pagar</span><span>Por cobrar</span></div>
+                <div class="vc-head"><span class="av" style="--c:#b45309">FM</span><span><b>Finca El Mirador</b><small>Café verde · 6 cuotas de $420.000</small></span></div>
+                <div class="cuotas"><i class="paid"></i><i class="paid"></i><i class="paid"></i><i class="next"></i><i></i><i></i></div>
+                <div class="vc-sum"><span><small>Pagado</small><b class="pos">$1.260.000</b></span><span><small>Saldo</small><b class="neg">$1.260.000</b></span></div>
+                <span class="btn btn-primary btn-sm btn-block">Abonar cuota 4 · $420.000</span>
+                <p class="s-label">Abonos</p>
+                <div class="hist"><span>18 sep · Cuota 3</span><b>$420.000</b></div>
+                <div class="hist"><span>18 ago · Cuota 2</span><b>$420.000</b></div>
+              </div>
+            </div>
+            <!-- Pedido → inventario + ingreso -->
+            <div class="vis" id="v-ped">
+              <div class="vcard ticket">
+                <div class="ticket-top"><b>Pedido #1042</b><i class="tag t-green">Entregado</i></div>
+                <p class="paper-n">Domicilio · Juan Pérez</p>
+                <div class="doc-line"><span>1× Café de origen 500 g</span><b>$32.000</b></div>
+                <div class="pay-chips"><span class="is-on">Efectivo</span><span>Transferencia</span><span>Datáfono</span></div>
+              </div>
+              <div class="flow">
+                <div class="flow-card"><span class="ico ico-cyan"><svg class="i"><use href="#i-box"/></svg></span><span><small>Inventario</small><b>Café de origen 500 g: 38 → 37</b></span></div>
+                <div class="flow-card"><span class="ico ico-blue"><svg class="i"><use href="#i-swap"/></svg></span><span><small>Movimientos</small><b class="pos">+$32.000 · Venta</b></span></div>
               </div>
             </div>
           </div>
@@ -330,410 +683,334 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════ BENEFITS -->
-    <section class="section bg-white" id="benefits">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <div class="section-eyebrow">Beneficios clave</div>
-          <h2>La gestión de tu negocio, simplificada</h2>
-          <p class="section-sub">Concéntrate en crecer. Nosotros nos encargamos de la complejidad operativa.</p>
+    <!-- ═══════════════════════════════════════════════════════ MÓDULOS -->
+    <section class="sec" id="modulos">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Todo en la misma app</p>
+          <h2 class="title">Cada parte de tu negocio, conectada.</h2>
+          <p class="lead">Lo que vendes descuenta el inventario, lo que cobras llega a tus movimientos y tus clientes están en un solo lugar.</p>
         </div>
 
-        <div class="benefits-grid">
-          <div class="benefit-card animate-on-scroll delay-1">
-            <div class="benefit-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <div class="mods">
+          <article class="mod rv" style="--a:#0891b2;--a-50:#ecfeff">
+            <div class="mod-vis">
+              <div class="mini-row"><span>Café de origen</span><i class="mini-bar"><i style="width:76%"></i></i><b>38</b></div>
+              <div class="mini-row"><span>Leche entera</span><i class="mini-bar warn"><i style="width:12%"></i></i><b>4</b></div>
+              <div class="mini-row"><span>Kit de barismo</span><i class="mini-bar"><i style="width:30%"></i></i><b>6</b></div>
             </div>
-            <h3>Finanzas claras, sin estrés</h3>
-            <p>Visualiza ingresos, gastos y rentabilidad en tiempo real. Genera reportes financieros con un solo clic y cierra el mes en minutos, no días.</p>
-            <ul class="benefit-list">
-              <li>Flujo de caja en vivo</li>
-              <li>Cuentas por cobrar y pagar</li>
-              <li>Conciliación automática</li>
-            </ul>
+            <span class="ico ico-cyan"><svg class="i"><use href="#i-box"/></svg></span>
+            <h3>Inventario</h3>
+            <p>Productos y servicios con su stock, precio y margen. El valor de tu inventario, al día.</p>
+            <a class="link-arrow" href="#demo" data-goto="inventario">Verlo en la demo <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="mod rv" style="--a:#16a34a;--a-50:#ecfdf3">
+            <div class="mod-vis">
+              <div class="mini-ticket"><b>#1043 · Mesa 4</b><span>2× Capuchino · 1× Torta</span><i>$26.000</i></div>
+              <div class="mini-ticket is-done"><b>#1042 · Domicilio</b><span>1× Café de origen</span><i>✓ Entregado</i></div>
+            </div>
+            <span class="ico ico-green"><svg class="i"><use href="#i-cart"/></svg></span>
+            <h3>Pedidos</h3>
+            <p>Pendientes y completados, con cierre de caja. Al entregar, el inventario y la caja se actualizan solos.</p>
+            <a class="link-arrow" href="#demo" data-goto="pedidos">Verlo en la demo <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="mod rv" style="--a:#d97706;--a-50:#fffbeb">
+            <div class="mod-vis mini-kb">
+              <span><small>Nuevo</small><i></i><i></i><i></i></span>
+              <span><small>Propuesta</small><i></i><i class="hot"></i></span>
+              <span><small>Ganado</small><i class="won"></i></span>
+            </div>
+            <span class="ico ico-amber"><svg class="i"><use href="#i-kanban"/></svg></span>
+            <h3>CRM en tablero</h3>
+            <p>Tus prospectos por etapa. Arrastra cada tarjeta y, al ganar, se convierte en cliente.</p>
+            <a class="link-arrow" href="#demo" data-goto="crm">Verlo en la demo <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="mod rv" style="--a:#ea580c;--a-50:#fff7ed">
+            <div class="mod-vis">
+              <div class="mini-person"><span class="av" style="--c:#2563eb">HC</span><b>Hotel Los Cerezos</b><i class="tag t-blue">Cliente</i></div>
+              <div class="mini-person"><span class="av" style="--c:#b45309">FM</span><b>Finca El Mirador</b><i class="tag t-orange">Proveedor</i></div>
+              <div class="mini-person"><span class="av" style="--c:#7c3aed">ML</span><b>María F. López</b><i class="tag t-violet">Colaboradora</i></div>
+            </div>
+            <span class="ico ico-orange"><svg class="i"><use href="#i-contacts"/></svg></span>
+            <h3>Contactos</h3>
+            <p>Clientes, proveedores y colaboradores en una sola libreta, listos para facturar o escribirles por WhatsApp.</p>
+            <a class="link-arrow" href="#demo" data-goto="contactos">Verlo en la demo <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="mod rv" style="--a:#e11d48;--a-50:#fff1f2">
+            <div class="mod-vis">
+              <div class="mini-debt"><b>Finca El Mirador</b><span class="cuotas cuotas-sm"><i class="paid"></i><i class="paid"></i><i class="paid"></i><i></i><i></i><i></i></span><small>3 de 6 cuotas · saldo $1.260.000</small></div>
+              <div class="mini-debt"><b>Préstamo a Andrés Ríos</b><span class="cuotas cuotas-sm teal"><i class="paid"></i><i></i><i></i></span><small>1 de 3 cuotas · por cobrar $400.000</small></div>
+            </div>
+            <span class="ico ico-rose"><svg class="i"><use href="#i-bank"/></svg></span>
+            <h3>Cuentas</h3>
+            <p>Por pagar y por cobrar en cuotas, con abonos y saldo al día. Nada se te pasa.</p>
+            <a class="link-arrow" href="#demo" data-goto="cuentas">Verlo en la demo <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="mod rv" style="--a:#4f46e5;--a-50:#eef2ff">
+            <div class="mod-vis">
+              <div class="mini-doc"><span class="mini-doc-top"><img src="logo.png" alt="" width="18" height="18" /><b>FACTURA</b></span><i></i><i></i><i class="short"></i><span class="mini-doc-total">$1.190.000</span></div>
+            </div>
+            <span class="ico ico-indigo"><svg class="i"><use href="#i-file"/></svg></span>
+            <h3>Facturas y cotizaciones</h3>
+            <p>Documentos de venta en PDF con tu marca, numerados y con su estado de cobro.</p>
+            <a class="link-arrow" href="#demo" data-goto="facturas">Verlo en la demo <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ EDUCACIÓN -->
+    <section class="sec sec-tight" id="educacion">
+      <div class="wrap">
+        <div class="edu rv">
+          <div class="edu-copy">
+            <p class="eyebrow eyebrow-light">Rapictrl Educación</p>
+            <h2 class="title title-light">¿Tienes una academia, un instituto o un centro de formación?</h2>
+            <p class="lead lead-light">Matrícula, aula virtual, notas, certificados y la cartera de tus estudiantes, en la misma plataforma donde llevas tu negocio.</p>
+            <div class="edu-grid">
+              <div><span class="ico ico-glass"><svg class="i"><use href="#i-cap"/></svg></span><b>Estudiantes</b><p>Matrícula, ficha, foto y documentos de cada uno.</p></div>
+              <div><span class="ico ico-glass"><svg class="i"><use href="#i-board"/></svg></span><b>Docentes</b><p>Entran con su usuario y ven solo sus programas.</p></div>
+              <div><span class="ico ico-glass"><svg class="i"><use href="#i-book"/></svg></span><b>Aula virtual</b><p>Materias, temas, clases, foro y evaluaciones.</p></div>
+              <div><span class="ico ico-glass"><svg class="i"><use href="#i-trend"/></svg></span><b>Notas por periodos</b><p>Cortes con su peso y el acumulado calculado.</p></div>
+              <div><span class="ico ico-glass"><svg class="i"><use href="#i-award"/></svg></span><b>Certificados y paz y salvo</b><p>El PDF queda en el portal del estudiante.</p></div>
+              <div><span class="ico ico-glass"><svg class="i"><use href="#i-phone"/></svg></span><b>Portal del estudiante</b><p>Su avance, sus clases pendientes y sus datos.</p></div>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-white" href="educacion.html">Ver Rapictrl Educación <svg class="i i-sm"><use href="#i-arrow"/></svg></a>
+              <a class="link-arrow link-light" href="https://app.rapictrl.com/demo">Entra al demo sin registrarte <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
+            </div>
+            <p class="edu-note">Incluido en el plan Empresarial.</p>
           </div>
-          <div class="benefit-card animate-on-scroll delay-2">
-            <div class="benefit-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          <div class="edu-visual" aria-hidden="true">
+            <div class="portal">
+              <div class="portal-top"><span class="av av-lg" style="--c:#a78bfa">VO</span><span><small>Hola,</small><b>Valentina</b></span></div>
+              <p class="s-label">Mi avance</p>
+              <div class="ring" style="--p:75"><b>75%</b><small>18 de 24 clases</small></div>
+              <div class="portal-next"><span class="ico ico-violet"><svg class="i i-sm"><use href="#i-play"/></svg></span><span><small>Sigue con</small><b>Clase 19 · Espresso perfecto</b></span></div>
+              <div class="portal-next"><span class="ico ico-violet"><svg class="i i-sm"><use href="#i-award"/></svg></span><span><small>Certificados</small><b>Certificado.pdf</b></span></div>
             </div>
-            <h3>Inventario siempre sincronizado</h3>
-            <p>Evita pérdidas y sobre-stock. Sabe qué tienes, qué necesitas y qué se vende más, sin depender de conteos manuales o planillas.</p>
-            <ul class="benefit-list">
-              <li>Alertas de stock crítico</li>
-              <li>Movimiento por producto</li>
-              <li>Control de proveedores</li>
-            </ul>
-          </div>
-          <div class="benefit-card animate-on-scroll delay-3">
-            <div class="benefit-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            </div>
-            <h3>Decisiones basadas en datos</h3>
-            <p>Deja de adivinar. Accede a la data que necesitas para planificar estrategias, negociar con proveedores y optimizar tus recursos.</p>
-            <ul class="benefit-list">
-              <li>Tendencias y comparativos</li>
-              <li>Productos más rentables</li>
-              <li>Análisis de temporada</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════ FEATURES -->
-    <section class="section bg-gray" id="features">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <div class="section-eyebrow">La plataforma</div>
-          <h2>Todo lo que necesitas en un solo lugar</h2>
-          <p class="section-sub">Rapictrl integra las herramientas esenciales para administrar tu negocio de forma eficiente, segura y desde cualquier lugar.</p>
+    <!-- ═══════════════════════════════════════════════════════ POR QUÉ RAPICTRL -->
+    <section class="sec" id="por-que">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Por qué Rapictrl</p>
+          <h2 class="title">Pensado para cómo trabajas tú.</h2>
         </div>
-
-        <!-- Feature 1 — Inventory -->
-        <div class="feature-row mb-feature animate-on-scroll">
-          <div class="feature-copy">
-            <div class="feature-tag feature-tag-red">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-              Módulo de Inventario
+        <div class="bento">
+          <article class="bt bt-wide rv">
+            <div>
+              <span class="ico ico-blue"><svg class="i"><use href="#i-phone"/></svg></span>
+              <h3>En el celular y en el computador</h3>
+              <p>Se instala como una app desde el navegador, sin tiendas ni descargas pesadas. Y la sesión no se te cae a mitad del día.</p>
             </div>
-            <h3>Nunca más pierdas una venta por falta de stock</h3>
-            <p>Controla cada producto en tiempo real. Recibe alertas antes de agotarte, registra entradas y salidas automáticamente, y sabe exactamente cuánto vale tu inventario en este momento.</p>
-            <ul class="check-list">
-              <li>Gestión de productos y categorías</li>
-              <li>Alertas automáticas de stock mínimo</li>
-              <li>Control de proveedores y órdenes de compra</li>
-              <li>Valoración del inventario en tiempo real</li>
-            </ul>
-          </div>
-          <div class="feature-visual">
-            <!-- Inventory Mockup -->
-            <div class="mockup-browser">
-              <div class="mockup-chrome">
-                <div class="chrome-dots">
-                  <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
-                </div>
-                <div class="chrome-url">app.rapictrl.com/inventario</div>
-              </div>
-              <div class="inv-body">
-                <div class="inv-header">
-                  <span class="inv-title">Control de Inventario</span>
-                  <div class="inv-btn">+ Nuevo</div>
-                </div>
-                <div class="inv-list">
-                  <div class="inv-row">
-                    <div class="status-dot dot-ok"></div>
-                    <span class="inv-name">Laptop Dell 15"</span>
-                    <span class="inv-qty">Cant: <strong>12</strong></span>
-                    <span class="inv-price">$2.800.000</span>
-                  </div>
-                  <div class="inv-row">
-                    <div class="status-dot dot-low"></div>
-                    <span class="inv-name">Mouse Inalámbrico</span>
-                    <span class="inv-qty">Cant: <strong class="warn">3</strong></span>
-                    <span class="inv-price">$45.000</span>
-                  </div>
-                  <div class="inv-row">
-                    <div class="status-dot dot-ok"></div>
-                    <span class="inv-name">Teclado Mecánico</span>
-                    <span class="inv-qty">Cant: <strong>8</strong></span>
-                    <span class="inv-price">$180.000</span>
-                  </div>
-                  <div class="inv-row">
-                    <div class="status-dot dot-out"></div>
-                    <span class="inv-name">Monitor 24"</span>
-                    <span class="inv-qty">Cant: <strong class="danger">0</strong></span>
-                    <span class="inv-price">$650.000</span>
-                  </div>
-                  <div class="inv-row">
-                    <div class="status-dot dot-ok"></div>
-                    <span class="inv-name">Audífonos BT</span>
-                    <span class="inv-qty">Cant: <strong>5</strong></span>
-                    <span class="inv-price">$120.000</span>
-                  </div>
-                </div>
-                <div class="inv-legend">
-                  <span class="legend-item ok">● Disponible</span>
-                  <span class="legend-item low">● Stock bajo</span>
-                  <span class="legend-item out">● Agotado</span>
-                </div>
-              </div>
+            <div class="devices" aria-hidden="true">
+              <div class="dv-laptop"><i></i><i></i><i></i><i class="dv-chart"></i></div>
+              <div class="dv-phone"><i></i><i></i><i class="dv-pill"></i></div>
             </div>
-          </div>
+          </article>
+          <article class="bt rv">
+            <span class="ico ico-indigo"><svg class="i"><use href="#i-layers"/></svg></span>
+            <h3>Varios negocios, una sola cuenta</h3>
+            <p>Cambia de negocio o de sede desde el menú, sin volver a iniciar sesión.</p>
+            <div class="switcher" aria-hidden="true">
+              <span class="is-on"><img src="logo.png" alt="" width="16" height="16" />Aroma Café &amp; Escuela<svg class="i i-xs"><use href="#i-check"/></svg></span>
+              <span><i style="--c:#16a34a"></i>Tienda Centro</span>
+            </div>
+          </article>
+          <article class="bt rv">
+            <span class="ico ico-violet"><svg class="i"><use href="#i-users"/></svg></span>
+            <h3>Tu equipo, cada uno con su acceso</h3>
+            <p>Invita usuarios con su rol. Cada quien ve lo que le corresponde.</p>
+            <div class="roles" aria-hidden="true"><i class="tag t-blue">Administrador</i><i class="tag t-gray">Usuario</i><i class="tag t-violet">Docente</i></div>
+          </article>
+          <article class="bt rv">
+            <span class="ico ico-coral"><svg class="i"><use href="#i-file"/></svg></span>
+            <h3>Tus documentos con tu marca</h3>
+            <p>Tu logo y tu NIT en cada factura y cotización que descargas.</p>
+            <div class="brandline" aria-hidden="true"><img src="logo.png" alt="" width="22" height="22" /><span><b>Tu negocio</b><small>NIT 900.123.456-7</small></span></div>
+          </article>
+          <article class="bt rv">
+            <span class="ico ico-wa"><svg class="i i-wa"><use href="#i-wa"/></svg></span>
+            <h3>Te lo dejamos andando</h3>
+            <p>Configuramos tu negocio contigo por WhatsApp, paso a paso y sin costo.</p>
+            <div class="chat" aria-hidden="true">
+              <span class="msg msg-in">¿Me ayudan a configurar mi negocio?</span>
+              <span class="msg msg-out">¡Claro! Lo hacemos contigo, paso a paso.</span>
+            </div>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <!-- Feature 2 — Financial -->
-        <div class="feature-row feature-row-reverse animate-on-scroll">
-          <div class="feature-visual">
-            <!-- Financial Mockup -->
-            <div class="mockup-browser">
-              <div class="mockup-chrome">
-                <div class="chrome-dots">
-                  <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
-                </div>
-                <div class="chrome-url">app.rapictrl.com/finanzas</div>
-              </div>
-              <div class="fin-body">
-                <div class="inv-header">
-                  <span class="inv-title">Resumen Financiero</span>
-                  <div class="fin-period">Abril 2025</div>
-                </div>
-                <div class="fin-stats">
-                  <div class="fin-stat">
-                    <div class="fin-label">Total Ingresos</div>
-                    <div class="fin-value green">$18.4M</div>
-                  </div>
-                  <div class="fin-stat">
-                    <div class="fin-label">Total Egresos</div>
-                    <div class="fin-value red">$9.2M</div>
-                  </div>
-                  <div class="fin-stat">
-                    <div class="fin-label">Utilidad</div>
-                    <div class="fin-value blue">$9.2M</div>
-                  </div>
-                </div>
-                <div class="txn-table">
-                  <div class="txn-header">
-                    <span>Concepto</span><span>Tipo</span><span>Valor</span>
-                  </div>
-                  <div class="txn-row-fin"><span>Venta Producto A</span><span>Ingreso</span><span class="income">+$340.000</span></div>
-                  <div class="txn-row-fin"><span>Arriendo Local</span><span>Egreso</span><span class="expense">-$800.000</span></div>
-                  <div class="txn-row-fin"><span>Servicios Web</span><span>Ingreso</span><span class="income">+$215.000</span></div>
-                  <div class="txn-row-fin"><span>Nómina Mayo</span><span>Egreso</span><span class="expense">-$3.200.000</span></div>
-                </div>
-              </div>
-            </div>
+    <!-- ═══════════════════════════════════════════════════════ HECHO EN COLOMBIA (prueba social honesta: sin cifras ni testimonios inventados) -->
+    <section class="sec sec-tight" id="colombia">
+      <div class="wrap">
+        <div class="co rv">
+          <div class="co-head">
+            <p class="eyebrow">Hecho en Colombia</p>
+            <h2 class="title title-sm">Para negocios de aquí, por gente de aquí.</h2>
           </div>
-          <div class="feature-copy">
-            <div class="feature-tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-              Módulo Financiero
-            </div>
-            <h3>Cierra el mes en minutos, no en días</h3>
-            <p>Registra ingresos y egresos, gestiona cuentas por cobrar y pagar, y genera reportes financieros completos con un solo clic. Sin Excel, sin cuadernos, sin dolores de cabeza.</p>
-            <ul class="check-list">
-              <li>Flujo de caja actualizado en tiempo real</li>
-              <li>Gestión de cuentas por cobrar / pagar</li>
-              <li>Reportes automáticos de rentabilidad</li>
-              <li>Historial completo de movimientos</li>
-            </ul>
+          <div class="co-grid">
+            <div><span class="ico ico-blue"><svg class="i"><use href="#i-coin"/></svg></span><b>Pesos colombianos y tu NIT</b><p>Montos con formato local y tu NIT impreso en facturas y cotizaciones.</p></div>
+            <div><span class="ico ico-coral"><svg class="i"><use href="#i-mic"/></svg></span><b>Entiende cómo hablas</b><p>«20 lucas», «150 mil» o «1,2 palos»: escríbelo o díctalo así.</p></div>
+            <div><span class="ico ico-wa"><svg class="i i-wa"><use href="#i-wa"/></svg></span><b>Una persona real te responde</b><p>Soporte por WhatsApp, sin bots ni tickets.</p></div>
+            <div><span class="ico ico-violet"><svg class="i"><use href="#i-store"/></svg></span><b>Lo usamos en nuestros negocios</b><p>Lo construye un equipo colombiano que lleva sus propios negocios en Rapictrl.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════ HOW IT WORKS -->
-    <section class="section bg-white" id="how">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <div class="section-eyebrow">Empezar es fácil</div>
-          <h2>Tres pasos y estás adentro</h2>
-          <p class="section-sub">Sin instalaciones, sin configuraciones complicadas. Y si te trabas en cualquier punto, te acompañamos por WhatsApp.</p>
+    <!-- ═══════════════════════════════════════════════════════ SIN LETRA PEQUEÑA / SOPORTE -->
+    <section class="sec" id="soporte">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <h2 class="title">Sin letra pequeña.<br />Y siempre con alguien al otro lado.</h2>
         </div>
-        <div class="steps-grid">
-          <div class="step-card animate-on-scroll delay-1">
-            <div class="step-num">01</div>
-            <div class="step-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fc454d" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div class="two">
+          <div class="card-l rv">
+            <h3>Sin letra pequeña</h3>
+            <p class="muted">Las condiciones, claras desde el primer día.</p>
+            <ul class="terms">
+              <li><span class="ok"><svg class="i i-sm"><use href="#i-check"/></svg></span><div><b>14 días gratis con todo incluido</b><p>Pruebas todos los módulos antes de elegir plan.</p></div></li>
+              <li><span class="ok"><svg class="i i-sm"><use href="#i-check"/></svg></span><div><b>Sin tarjeta de crédito</b><p>Para empezar solo necesitas tu correo o tu cuenta de Google.</p></div></li>
+              <li><span class="ok"><svg class="i i-sm"><use href="#i-check"/></svg></span><div><b>Sin permanencia</b><p>Cancelas cuando quieras, sin penalizaciones.</p></div></li>
+              <li><span class="ok"><svg class="i i-sm"><use href="#i-check"/></svg></span><div><b>Te ayudamos a configurarlo</b><p>Te acompañamos en el registro y la configuración, sin costo.</p></div></li>
+              <li><span class="ok"><svg class="i i-sm"><use href="#i-check"/></svg></span><div><b>100% en la nube</b><p>Nada que instalar: entras desde el navegador.</p></div></li>
+            </ul>
+          </div>
+          <div class="card-l rv">
+            <h3>Siempre a tu lado</h3>
+            <p class="muted">Personas reales, en tu idioma, cuando lo necesites.</p>
+            <div class="channels">
+              <a class="channel" href="https://wa.me/573223267797?text=Hola,%20tengo%20una%20duda%20sobre%20Rapictrl" target="_blank" rel="noopener" data-cta="soporte-wa"><span class="ico ico-wa"><svg class="i i-wa"><use href="#i-wa"/></svg></span><span><b>Escríbenos por WhatsApp</b><small>+57 322 326 7797</small></span><svg class="i i-sm ch-arrow"><use href="#i-arrow"/></svg></a>
+              <a class="channel" href="https://wa.me/573223267797?text=Hola,%20quisiera%20una%20demo%20de%20Rapictrl" target="_blank" rel="noopener" data-cta="soporte-demo"><span class="ico ico-blue"><svg class="i"><use href="#i-play"/></svg></span><span><b>Pide una demo guiada</b><small>Te mostramos la app con tu caso</small></span><svg class="i i-sm ch-arrow"><use href="#i-arrow"/></svg></a>
+              <a class="channel" href="https://wa.me/573223267797?text=Hola,%20estoy%20configurando%20mi%20negocio%20en%20Rapictrl%20y%20quiero%20una%20mano" target="_blank" rel="noopener" data-cta="soporte-config"><span class="ico ico-amber"><svg class="i"><use href="#i-chat"/></svg></span><span><b>Configúralo con nosotros</b><small>Lo dejamos listo contigo</small></span><svg class="i i-sm ch-arrow"><use href="#i-arrow"/></svg></a>
+              <a class="channel" href="https://app.rapictrl.com/demo"><span class="ico ico-violet"><svg class="i"><use href="#i-cap"/></svg></span><span><b>Demo educativo sin registro</b><small>Recorre un instituto ya montado</small></span><svg class="i i-sm ch-arrow"><use href="#i-arrow"/></svg></a>
             </div>
-            <h3>Crea tu cuenta</h3>
-            <p>Regístrate en menos de 2 minutos con tu correo o Google. Sin tarjeta de crédito requerida.</p>
-            <a href="https://app.rapictrl.com/register" class="step-link">Crear mi cuenta gratis <span class="arrow">→</span></a>
-          </div>
-          <div class="step-connector"></div>
-          <div class="step-card animate-on-scroll delay-2">
-            <div class="step-num">02</div>
-            <div class="step-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fc454d" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            </div>
-            <h3>Configura tu negocio</h3>
-            <p>Agrega tus productos, servicios y categorías. Nuestro asistente de onboarding te guía paso a paso.</p>
-            <a href="https://wa.me/573223267797?text=Hola,%20estoy%20configurando%20mi%20negocio%20en%20Rapictrl%20y%20quiero%20una%20mano" target="_blank" class="step-link">¿Prefieres que lo hagamos contigo? <span class="arrow">→</span></a>
-          </div>
-          <div class="step-connector"></div>
-          <div class="step-card animate-on-scroll delay-3">
-            <div class="step-num">03</div>
-            <div class="step-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fc454d" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <h3>Toma el control</h3>
-            <p>Empieza a registrar tus operaciones y observa cómo tu dashboard cobra vida con datos reales.</p>
-            <a href="https://app.rapictrl.com/login" class="step-link">Entrar a mi dashboard <span class="arrow">→</span></a>
-          </div>
-        </div>
-
-        <!-- Soporte humano directo: cualquier duda cae al WhatsApp personal -->
-        <div class="support-band animate-on-scroll">
-          <div class="support-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </div>
-          <div class="support-text">
-            <strong>¿Necesitas una mano para empezar?</strong>
-            <p>Escríbenos por WhatsApp y te acompañamos en el registro y la configuración, paso a paso y sin costo. Respuesta de una persona real, no un bot.</p>
-          </div>
-          <a href="https://wa.me/573223267797?text=Hola,%20quiero%20empezar%20con%20Rapictrl%20y%20necesito%20ayuda" target="_blank" class="btn-wa">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Escribir por WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ FOR WHO -->
-    <section class="section bg-gray" id="for-who">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <div class="section-eyebrow">¿Para quién es?</div>
-          <h2>Perfecto para cualquier negocio que quiera crecer</h2>
-          <p class="section-sub">Si manejas dinero, inventario o clientes, Rapictrl es para ti.</p>
-        </div>
-        <div class="who-grid">
-          <div class="who-card animate-on-scroll delay-1">
-            <div class="who-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            </div>
-            <h3>PYMES</h3>
-            <p>Pequeñas y medianas empresas que necesitan control sin complejidad.</p>
-          </div>
-          <div class="who-card animate-on-scroll delay-2">
-            <div class="who-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <h3>Instituciones Educativas</h3>
-            <p>Colegios, academias e institutos que gestionan pagos, inventario y reportes.</p>
-          </div>
-          <div class="who-card animate-on-scroll delay-3">
-            <div class="who-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.9-1.35L23 6H6"/></svg>
-            </div>
-            <h3>Comercios y Tiendas</h3>
-            <p>Negocios con flujo de caja diario que necesitan visibilidad inmediata.</p>
-          </div>
-          <div class="who-card animate-on-scroll delay-4">
-            <div class="who-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <h3>Emprendedores</h3>
-            <p>Startups y emprendedores que quieren crecer con bases sólidas desde el día uno.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════ PRICING -->
-    <section class="section bg-dark" id="pricing">
-      <div class="container">
-        <div class="section-header section-header-dark animate-on-scroll">
-          <div class="section-eyebrow eyebrow-accent">Precios</div>
-          <h2>Planes para cada etapa de tu negocio</h2>
-          <p class="section-sub text-slate">Desde <strong>$19.900/mes</strong>. Todos incluyen <strong>14 días de prueba gratuita</strong>.</p>
-          <p class="pricing-note">Sin tarjeta de crédito · Sin contratos · Cancela cuando quieras</p>
+    <!-- ═══════════════════════════════════════════════════════ PRECIOS -->
+    <section class="sec sec-soft" id="precios">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Precios</p>
+          <h2 class="title">Planes simples, en pesos colombianos.</h2>
+          <p class="lead">Todos empiezan con <strong>14 días gratis</strong> y sin tarjeta. Sin contratos: cancelas cuando quieras.</p>
         </div>
-        <div class="pricing-grid">
-          <div class="pricing-card animate-on-scroll delay-1">
-            <div class="plan-name">Básico</div>
-            <div class="plan-price">$19.900<span>/mes</span></div>
-            <div class="plan-users">2 usuarios</div>
-            <ul class="plan-features">
-              <li>Dashboard básico</li>
-              <li>Control de inventario</li>
-              <li>Reportes esenciales</li>
+        <div class="plans">
+          <article class="plan rv">
+            <h3>Básico</h3>
+            <p class="plan-for">Para empezar a ordenar tu negocio.</p>
+            <p class="price"><b>$19.900</b><span>/mes</span></p>
+            <p class="plan-users"><svg class="i i-sm"><use href="#i-users"/></svg>2 usuarios</p>
+            <a class="btn btn-light btn-block" href="https://app.rapictrl.com/register" data-cta="plan-basico">Empezar gratis</a>
+            <ul class="checks">
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Dashboard básico</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Control de inventario</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Reportes esenciales</li>
             </ul>
-            <a href="https://app.rapictrl.com/register" class="btn-plan">Empezar gratis</a>
-          </div>
-          <div class="pricing-card pricing-popular animate-on-scroll delay-2">
-            <div class="popular-badge">⭐ Más popular</div>
-            <div class="plan-name">Profesional</div>
-            <div class="plan-price">$79.900<span>/mes</span></div>
-            <div class="plan-users">5 usuarios</div>
-            <ul class="plan-features">
-              <li>Todo lo de Básico</li>
-              <li>Módulo financiero completo</li>
-              <li>Soporte prioritario WhatsApp</li>
+          </article>
+          <article class="plan plan-pop rv">
+            <span class="plan-badge">Más popular</span>
+            <h3>Profesional</h3>
+            <p class="plan-for">Para negocios con equipo.</p>
+            <p class="price"><b>$79.900</b><span>/mes</span></p>
+            <p class="plan-users"><svg class="i i-sm"><use href="#i-users"/></svg>5 usuarios</p>
+            <a class="btn btn-primary btn-block" href="https://app.rapictrl.com/register" data-cta="plan-profesional">Empezar gratis</a>
+            <ul class="checks">
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Todo lo del plan Básico</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Módulo financiero completo</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Soporte prioritario por WhatsApp</li>
             </ul>
-            <a href="https://app.rapictrl.com/register" class="btn-plan btn-plan-primary">Empezar gratis</a>
-          </div>
-          <div class="pricing-card animate-on-scroll delay-3">
-            <div class="plan-name">Empresarial</div>
-            <div class="plan-price">$125.000<span>/mes</span></div>
-            <div class="plan-users">Usuarios ilimitados</div>
-            <ul class="plan-features">
-              <li>Todo lo de Profesional</li>
-              <li>Multi-sede</li>
-              <li>Soporte dedicado</li>
+          </article>
+          <article class="plan rv">
+            <h3>Empresarial</h3>
+            <p class="plan-for">Para varias sedes e instituciones.</p>
+            <p class="price"><b>$125.000</b><span>/mes</span></p>
+            <p class="plan-users"><svg class="i i-sm"><use href="#i-users"/></svg>Usuarios ilimitados</p>
+            <a class="btn btn-light btn-block" href="https://app.rapictrl.com/register" data-cta="plan-empresarial">Empezar gratis</a>
+            <ul class="checks">
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Todo lo del plan Profesional</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Multi-sede</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Módulo académico</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Soporte dedicado</li>
             </ul>
-            <a href="https://app.rapictrl.com/register" class="btn-plan">Empezar gratis</a>
-          </div>
+          </article>
         </div>
+        <p class="plans-foot rv">¿No sabes cuál te conviene? <a href="https://wa.me/573223267797?text=Hola,%20quiero%20saber%20qu%C3%A9%20plan%20de%20Rapictrl%20me%20conviene" target="_blank" rel="noopener" data-cta="precios-duda">Escríbenos y te ayudamos a elegir</a></p>
+      </div>
+    </section>
 
-        <!-- Puente hacia la landing de educación: el módulo académico solo viene
-             en Empresarial, así que un colegio necesita su propia página (y su
-             propio demo) para entender qué está comprando. -->
-        <div class="edu-demo animate-on-scroll">
-          <div class="edu-demo-text">
-            <div class="edu-demo-eyebrow">🎓 Colegios, institutos y centros de formación</div>
-            <h3>Rapictrl también gestiona tu institución</h3>
-            <p>Matrícula, aula virtual, notas por periodos, portal del estudiante y certificados. Míralo en su propia página, o entra directo a un instituto de prueba ya montado.</p>
-          </div>
-          <div class="edu-demo-actions">
-            <a href="educacion.html" class="btn-plan edu-demo-cta">Ver Rapictrl Educación</a>
-            <a href="https://app.rapictrl.com/demo" class="edu-demo-link">o entra al demo sin registrarte →</a>
-          </div>
+    <!-- ═══════════════════════════════════════════════════════ PREGUNTAS FRECUENTES -->
+    <section class="sec" id="preguntas">
+      <div class="wrap faq-wrap">
+        <div class="faq-side rv">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 class="title">Resolvemos tus dudas.</h2>
+          <p class="lead">¿No encuentras lo que buscas? Una persona del equipo te responde por WhatsApp.</p>
+          <a class="btn btn-wa" href="https://wa.me/573223267797?text=Hola,%20tengo%20una%20duda%20sobre%20Rapictrl" target="_blank" rel="noopener" data-cta="faq"><svg class="i i-wa"><use href="#i-wa"/></svg>Escríbenos</a>
+        </div>
+        <div class="faq rv">
+          <details name="faq" open>
+            <summary>¿Es difícil de usar?<svg class="i i-sm"><use href="#i-plus"/></svg></summary>
+            <p>No. Está pensado para que anotes una venta o un gasto en segundos, incluso desde el celular. Y si te trabas, te acompañamos por WhatsApp.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Tengo que instalar algo?<svg class="i i-sm"><use href="#i-plus"/></svg></summary>
+            <p>No. Rapictrl funciona en la nube: entras desde el navegador del computador o del celular. En el celular puedes agregarlo a la pantalla de inicio y se abre como una app.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Puedo manejar varios negocios o sedes?<svg class="i i-sm"><use href="#i-plus"/></svg></summary>
+            <p>Sí. Según tu plan, puedes tener varios negocios o sedes y cambiar entre ellos desde el menú sin volver a iniciar sesión. Cada uno guarda sus propios datos.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Mis datos están seguros?<svg class="i i-sm"><use href="#i-plus"/></svg></summary>
+            <p>Sí. La información viaja cifrada, cada negocio ve solo sus propios datos y se hacen copias de seguridad automáticas.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Qué pasa cuando termina la prueba gratis?<svg class="i i-sm"><use href="#i-plus"/></svg></summary>
+            <p>Al terminar los 14 días eliges el plan que mejor se adapte a tu negocio y sigues sin perder nada de lo que registraste. Si no lo necesitas, no pagas nada.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Qué soporte ofrecen?<svg class="i i-sm"><use href="#i-plus"/></svg></summary>
+            <p>Te atendemos por WhatsApp con una persona real. En los planes Profesional y Empresarial el soporte es prioritario.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Sirve para academias e institutos?<svg class="i i-sm"><use href="#i-plus"/></svg></summary>
+            <p>Sí. Rapictrl Educación maneja estudiantes, docentes, programas, aula virtual, notas por periodos y certificados. Viene en el plan Empresarial y puedes <a href="https://app.rapictrl.com/demo">entrar al demo sin registrarte</a>.</p>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════ FAQ -->
-    <section class="section bg-white" id="faq">
-      <div class="container faq-container">
-        <div class="section-header animate-on-scroll">
-          <div class="section-eyebrow">FAQ</div>
-          <h2>Preguntas frecuentes</h2>
-        </div>
-        <div class="faq-list animate-on-scroll">
-          <div class="faq-item">
-            <button class="faq-question">
-              ¿Es difícil de usar Rapictrl?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>No. Diseñamos Rapictrl con una interfaz intuitiva y fácil de navegar. Además, ofrecemos un asistente de onboarding que te guía desde el primer día, más tutoriales y soporte para que empieces sin complicaciones.</p>
-            </div>
+    <!-- ═══════════════════════════════════════════════════════ CIERRE -->
+    <section class="sec sec-tight" id="empezar">
+      <div class="wrap">
+        <div class="final rv">
+          <div class="final-copy">
+            <h2 class="title title-light">Empieza hoy. En 14 días sabrás si Rapictrl es para ti.</h2>
+            <ul class="checks checks-light">
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Todos los módulos durante la prueba</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Sin tarjeta de crédito ni contratos</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>Te ayudamos a configurarlo por WhatsApp</li>
+              <li><svg class="i i-sm"><use href="#i-check"/></svg>En el celular y el computador</li>
+            </ul>
           </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              ¿Necesito instalar algo en mi computador?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>Absolutamente nada. Rapictrl es 100% en la nube. Solo necesitas un navegador web y conexión a internet para acceder desde cualquier lugar, en cualquier dispositivo.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              ¿Mis datos están seguros?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. La seguridad es nuestra máxima prioridad. Utilizamos encriptación de nivel bancario y realizamos copias de seguridad constantes para proteger tu información empresarial.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              ¿Qué pasa cuando termina la prueba gratuita?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>Al terminar los 14 días, simplemente elige el plan que mejor se adapte a tu negocio y continúa sin interrupciones. Si no lo necesitas, puedes cancelar sin ningún costo.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              ¿Qué tipo de soporte ofrecen?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>El Plan Profesional y Empresarial incluyen soporte técnico prioritario a través de WhatsApp para resolver cualquier duda de manera rápida y personalizada.</p>
-            </div>
+          <div class="final-card">
+            <p class="final-from">Planes desde</p>
+            <p class="price price-light"><b>$19.900</b><span>/mes</span></p>
+            <p class="final-note">después de los 14 días gratis</p>
+            <a class="btn btn-primary btn-lg btn-block" href="https://app.rapictrl.com/register" data-cta="cierre">Empieza gratis <svg class="i i-sm"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-google btn-lg btn-block" href="https://app.rapictrl.com/register" data-cta="cierre-google"><svg class="i i-g"><use href="#i-google"/></svg>Continuar con Google</a>
+            <a class="final-demo" href="https://wa.me/573223267797?text=Hola,%20quisiera%20una%20demo%20de%20Rapictrl" target="_blank" rel="noopener" data-cta="cierre-demo">Prefiero que me lo muestren <svg class="i i-xs"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </div>
@@ -741,50 +1018,39 @@
 
   </main>
 
-  <!-- ═══════════════════════════════════════════════════════ FOOTER CTA -->
-  <footer class="footer">
-    <div class="footer-cta">
-      <div class="container">
-        <div class="footer-cta-inner animate-on-scroll">
-          <div class="badge badge-shield">🛡️ 14 días gratis, sin tarjeta de crédito</div>
-          <h2>¿Listo para saber exactamente en qué punto está tu negocio?</h2>
-          <p>Únete a los negocios que ya toman decisiones con datos reales. Comienza hoy mismo, gratis.</p>
-          <div class="footer-actions">
-            <a href="https://wa.me/573223267797?text=Hola,%20quisiera%20una%20demo%20de%20Rapictrl" target="_blank" class="btn-primary btn-lg">
-              Solicitar Demo Gratuita →
-            </a>
-            <a href="https://app.rapictrl.com/register" class="btn-google btn-lg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              Empieza gratis con Google
-            </a>
-          </div>
-          <div class="trust-badges footer-trust">
-            <span>✓ Sin tarjeta de crédito</span>
-            <span>✓ Sin contratos</span>
-            <span>✓ Cancela cuando quieras</span>
-            <span>✓ Soporte incluido</span>
-          </div>
-        </div>
+  <!-- ═══════════════════════════════════════════════════════ PIE -->
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <a href="#inicio" class="brand"><img src="logo.png" alt="" width="28" height="28" />Rapictrl</a>
+        <p>Ventas, gastos, inventario, clientes y cartera en un solo lugar. Hecho en Colombia.</p>
       </div>
+      <nav aria-label="Producto"><p>Producto</p><a href="#demo" data-goto="movimientos">Movimientos</a><a href="#demo" data-goto="facturas">Facturas</a><a href="#demo" data-goto="inventario">Inventario</a><a href="#demo" data-goto="crm">CRM</a><a href="#precios">Precios</a></nav>
+      <nav aria-label="Educación"><p>Educación</p><a href="educacion.html">Rapictrl Educación</a><a href="https://app.rapictrl.com/demo">Demo sin registro</a></nav>
+      <nav aria-label="Cuenta"><p>Cuenta</p><a href="https://app.rapictrl.com/login">Iniciar sesión</a><a href="https://app.rapictrl.com/register" data-cta="pie">Crear cuenta gratis</a></nav>
+      <nav aria-label="Contacto"><p>Contacto</p><a href="https://wa.me/573223267797" target="_blank" rel="noopener" data-cta="pie-wa">WhatsApp</a><a class="foot-wa" href="https://wa.me/573223267797" target="_blank" rel="noopener" data-cta="pie-wa">+57 322 326 7797</a></nav>
     </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <span class="footer-brand"><img src="logo.png" alt="Rapictrl" class="footer-logo-mark" />© <span id="year"></span> Rapictrl. Todos los derechos reservados.</span>
-        <nav class="footer-links">
-          <a href="#pricing">Precios</a>
-          <a href="https://wa.me/573223267797" target="_blank">Contacto</a>
-        </nav>
+    <div class="wrap">
+      <div class="foot-bottom">
+        <span>© <span id="year"></span> Rapictrl. Todos los derechos reservados.</span>
+        <span>Hecho en Colombia</span>
       </div>
     </div>
   </footer>
 
+  <!-- Barra fija del celular: aparece al pasar el hero y se esconde en el cierre.
+       Deja libre la esquina derecha para el botón flotante de WhatsApp. -->
+  <div class="mbar" id="mbar">
+    <a class="btn btn-primary btn-block" href="https://app.rapictrl.com/register" data-cta="barra-movil">Empieza gratis, sin tarjeta</a>
+  </div>
+
   <!-- Botón flotante de soporte por WhatsApp -->
-  <a href="https://wa.me/573223267797?text=Hola,%20tengo%20una%20duda%20sobre%20Rapictrl" target="_blank" class="wa-fab" aria-label="Soporte por WhatsApp">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a href="https://wa.me/573223267797?text=Hola,%20tengo%20una%20duda%20sobre%20Rapictrl" target="_blank" rel="noopener" class="wa-fab" aria-label="Soporte por WhatsApp" data-cta="flotante">
+    <svg class="i i-wa"><use href="#i-wa"/></svg>
     <span class="wa-fab-label">¿Dudas? Escríbenos</span>
   </a>
 
-  <script src="script.js"></script>
+  <script src="pixel.js"></script>
+  <script src="home.js" defer></script>
 </body>
 </html>
